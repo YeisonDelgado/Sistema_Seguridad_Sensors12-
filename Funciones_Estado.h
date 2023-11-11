@@ -1,23 +1,22 @@
 /*!
-\file   Funciones_Estado.h
-\date   2023-10-26
-\author Estiven Delgado <yeisondelgado@unicauca.edu.co>
-\author Alejandra Benavides <vbenavides@unicauca.edu.co>
-\brief  Funciones generales de control.
-
-\par Copyright
-Information contained herein is proprietary to and constitutes valuable
-confidential trade secrets of unicauca, and
-is subject to restrictions on use and disclosure.
-
-\par
-Copyright (c) unicauca 2023. All rights reserved.
-
-\par
-The copyright notices above do not evidence any actual or
-intended publication of this material.
-**************************
-*/
+ * @file   Funciones_Estado.h
+ * @date   2023-10-26
+ * @author Estiven Delgado <yeisondelgado@unicauca.edu.co>
+ * @author Alejandra Benavides <vbenavides@unicauca.edu.co>
+ * @brief  General control functions.
+ *
+ * @par Copyright
+ * Information contained herein is proprietary to and constitutes valuable
+ * confidential trade secrets of unicauca, and
+ * is subject to restrictions on use and disclosure.
+ *
+ * @par
+ * Copyright (c) unicauca 2023. All rights reserved.
+ *
+ * @par
+ * The copyright notices above do not evidence any actual or
+ * intended publication of this material.
+ */
 
 #ifndef FUNCIONES_ESTADO_H
 #define FUNCIONES_ESTADO_H
@@ -32,7 +31,7 @@ extern "C" {
 #define LED_GREEN  RE1
 #define LED_BLUE   RE2
 
-enum State{
+enum State {
     security,
     monitoring,
     locked,
@@ -46,17 +45,52 @@ unsigned char var_sensor_hall = 0;
 unsigned char var_sensor_metal = 0;
 unsigned char intend = 0;
 
-const char password[5] ={'2','0','2','3','0'};
+const char password[5] = { '2', '0', '2', '3', '0' };
 char pass_user[5];
 unsigned char idx = 0;
 unsigned char system_lock = 0;
-char buffer [17];
+char buffer[17];
 
+/*!
+ * @fn void function_Security(void)
+ * @brief Main security system that receives an operating key.
+ * @note None.
+ */
 void function_Security(void);
+
+/*!
+ * @fn void function_Locked(void)
+ * @brief Locks the system for 10 seconds, maximum number of failed password attempts.
+ * @note None.
+ */
 void function_Locked(void);
+
+/*!
+ * @fn void function_Monitoring(void)
+ * @brief Monitoring of digital sensors and conditional decision making.
+ * @note None.
+ */
 void function_Monitoring(void);
+
+/*!
+ * @fn void function_Alarm(void)
+ * @brief Indicates the activation of at least one of the three digital sensors.
+ * @note None.
+ */
 void function_Alarm(void);
+
+/*!
+ * @fn void function_Environment(void)
+ * @brief Displays a warning signal on temperature increase.
+ * @note None.
+ */
 void function_Environment(void);
+
+/*!
+ * @fn void function_Environment_alarm(void)
+ * @brief Conversion to display the temperature in degrees Celsius.
+ * @note None.
+ */
 void function_Environment_alarm(void);
 
 #ifdef __cplusplus

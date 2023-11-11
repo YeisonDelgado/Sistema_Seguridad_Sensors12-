@@ -1,23 +1,24 @@
 /*!
-\file   keypad.h
-\date   2023-10-26
-\author Estiven Delgado <yeisondelgado@unicauca.edu.co>
-\author Alejandra Benavides <vbenavides@unicauca.edu.co>
-\brief  Functions Handler Keypad 4x4.
-
-\par Copyright
-Information contained herein is proprietary to and constitutes valuable
-confidential trade secrets of unicauca, and
-is subject to restrictions on use and disclosure.
-
-\par
-Copyright (c) unicauca 2023. All rights reserved.
-
-\par
-The copyright notices above do not evidence any actual or
-intended publication of this material.
-******************************************************************************
-*/
+ * @file   keypad.h
+ * @date   2023-10-26
+ * @author Estiven Delgado <yeisondelgado@unicauca.edu.co>
+ * @author Alejandra Benavides <vbenavides@unicauca.edu.co>
+ * @brief  Handler for 4x4 Keypad.
+ *
+ * @par Copyright
+ * Information contained herein is proprietary to and constitutes valuable
+ * confidential trade secrets of unicauca, and
+ * is subject to restrictions on use and disclosure.
+ *
+ * @par
+ * Copyright (c) unicauca 2023. All rights reserved.
+ *
+ * @par
+ * The copyright notices above do not evidence any actual or
+ * intended publication of this material.
+ *
+ ******************************************************************************
+ */
 
 #ifndef KEYPAD_H
 #define	KEYPAD_H
@@ -35,22 +36,22 @@ extern "C" {
 #define PB1     1
 #define PB0     0
 
-/* FILAS-SALIDAS */
+/* ROWS - OUTPUTS */
 #define ROW1   PB0
 #define ROW2   PB1
 #define ROW3   PB2
 #define ROW4   PB3
-/* COLUMNAS-ENTRADAS */
+/* COLUMNS - INPUTS */
 #define COL1   PB4
 #define COL2   PB5
 #define COL3   PB6
 #define COL4   PB7
 
-#define PTECLADO  TRISB
-#define FILAS     PORTB
-#define COLUMNAS  PORTB
+#define KEYPAD_PORT  TRISB
+#define ROWS     PORTB
+#define COLUMNS  PORTB
 
-void keypad_init (void);
+void keypad_init(void);
 char keypad_getkey(void);
     
 #ifdef	__cplusplus

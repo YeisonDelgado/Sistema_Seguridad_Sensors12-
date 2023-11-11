@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Sensors_Control.c" 2
-# 22 "Sensors_Control.c"
+# 21 "Sensors_Control.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,18 +2488,18 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 22 "Sensors_Control.c" 2
+# 21 "Sensors_Control.c" 2
 
 # 1 "./Sensors_Control.h" 1
-# 33 "./Sensors_Control.h"
+# 25 "./Sensors_Control.h"
 void ADC_Init(void);
-int Use_Chanel(int select);
+int Use_Channel(int select);
 int Calculus_Temperature(int temperature);
 unsigned char Sensors_IHM(void);
-# 23 "Sensors_Control.c" 2
+# 22 "Sensors_Control.c" 2
 
 # 1 "./fuses.h" 1
-# 34 "./fuses.h"
+# 35 "./fuses.h"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2518,7 +2518,7 @@ unsigned char Sensors_IHM(void);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 24 "Sensors_Control.c" 2
+# 23 "Sensors_Control.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\math.h" 1 3
 
@@ -2553,44 +2553,49 @@ extern double ldexp(double, int);
 extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
-# 25 "Sensors_Control.c" 2
-# 42 "Sensors_Control.c"
-void ADC_Init(void){
+# 24 "Sensors_Control.c" 2
+# 38 "Sensors_Control.c"
+void ADC_Init(void) {
     ADCON1bits.ADFM = 1;
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
     ADCON0bits.ADCS = 0b01;
 }
-# 61 "Sensors_Control.c"
-int Use_Chanel(int select){
-    ADCON0bits.CHS = (0x0f & select);
+# 54 "Sensors_Control.c"
+int Use_Channel(int select){
+    ADCON0bits.CHS = (0x0F & select);
     ADCON0bits.ADON = 1;
     _delay((unsigned long)((30)*(8000000/4000000.0)));
     ADCON0bits.GO = 1;
     while (ADCON0bits.GO);
     ADCON0bits.ADON = 0;
 
+
     return ((ADRESH << 8) | ADRESL);
 }
-# 84 "Sensors_Control.c"
-int Calculus_Temperature(int temperature){
+# 75 "Sensors_Control.c"
+int Calculus_Temperature(int temperature) {
     long a = 1023 - temperature;
 
-    float tempC = (float)(4090/(log((1025.0 * 10 / a - 10) / 10) + 4090/298.0) - 273.0);
+    float tempC = (float)(4090 / (log((1025.0 * 10 / a - 10) / 10) + 4090 / 298.0) - 273.0);
     float tempF = (float)(tempC + 273.15);
     return (int)tempC;
 }
-# 104 "Sensors_Control.c"
-unsigned char Sensors_IHM(void){
+# 92 "Sensors_Control.c"
+unsigned char Sensors_IHM(void) {
     unsigned char alarm_activate = 0;
-    if(RC1 == 0){
+
+    if (RC1 == 0) {
         alarm_activate = 1;
     }
-    if(RC0 == 1){
+
+    if (RC0 == 1) {
         alarm_activate = 1;
     }
-    if(RC2 == 1){
+
+    if (RC2 == 1) {
         alarm_activate = 1;
     }
+
     return alarm_activate;
- }
+}

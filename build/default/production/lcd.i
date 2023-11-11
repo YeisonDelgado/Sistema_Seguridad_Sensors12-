@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "lcd.c" 2
-# 22 "lcd.c"
+# 23 "lcd.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,20 +2488,20 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 22 "lcd.c" 2
+# 23 "lcd.c" 2
 
 # 1 "./lcd.h" 1
-# 34 "./lcd.h"
+# 36 "./lcd.h"
 void LCD_Init(void);
 void LCD_Command(unsigned char );
 void LCD_Char(unsigned char x);
 void LCD_String(const char *);
 void LCD_String_xy(char, char , const char *);
 void LCD_Clear(void);
-# 23 "lcd.c" 2
+# 24 "lcd.c" 2
 
 # 1 "./fuses.h" 1
-# 34 "./fuses.h"
+# 35 "./fuses.h"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2520,8 +2520,8 @@ void LCD_Clear(void);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 24 "lcd.c" 2
-# 38 "lcd.c"
+# 25 "lcd.c" 2
+# 36 "lcd.c"
 void LCD_Init(void){
     TRISD = 0;
     _delay((unsigned long)((15)*(8000000/4000.0)));
@@ -2531,10 +2531,10 @@ void LCD_Init(void){
     LCD_Command(0x0c);
     LCD_Command(0x06);
 }
-# 61 "lcd.c"
+# 56 "lcd.c"
 void LCD_Command(unsigned char cmd )
 {
- PORTD = (PORTD & 0x0f) |(0xF0 & cmd);
+ PORTD = (PORTD & 0x0f) | (0xF0 & cmd);
  PORTDbits.RD0 = 0;
  PORTDbits.RD1 = 1;
  __nop();
@@ -2546,7 +2546,7 @@ void LCD_Command(unsigned char cmd )
  PORTDbits.RD1 = 0;
  _delay((unsigned long)((3)*(8000000/4000.0)));
 }
-# 89 "lcd.c"
+# 80 "lcd.c"
 void LCD_Char(unsigned char dat)
 {
  PORTD = (PORTD & 0x0f) | (0xF0 & dat);
@@ -2561,32 +2561,32 @@ void LCD_Char(unsigned char dat)
  PORTDbits.RD1 = 0;
  _delay((unsigned long)((3)*(8000000/4000.0)));
 }
-# 117 "lcd.c"
+# 104 "lcd.c"
 void LCD_String(const char *msg)
 {
- while((*msg)!=0)
+ while((*msg) != 0)
  {
    LCD_Char(*msg);
    msg++;
     }
 }
-# 138 "lcd.c"
-void LCD_String_xy(char row,char pos,const char *msg)
+# 124 "lcd.c"
+void LCD_String_xy(char row, char pos, const char *msg)
 {
-    char location=0;
-    if(row<=1)
+    char location = 0;
+    if (row <= 1)
     {
-        location=(0x80) | ((pos) & 0x0f);
+        location = (0x80) | ((pos) & 0x0f);
         LCD_Command(location);
     }
     else
     {
-        location=(0xC0) | ((pos) & 0x0f);
+        location = (0xC0) | ((pos) & 0x0f);
         LCD_Command(location);
     }
     LCD_String(msg);
 }
-# 166 "lcd.c"
+# 149 "lcd.c"
 void LCD_Clear(void)
 {
     LCD_Command(0x01);

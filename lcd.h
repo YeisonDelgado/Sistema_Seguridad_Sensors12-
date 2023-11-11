@@ -1,23 +1,25 @@
 /*!
-\file   lcd.h
-\date   2023-10-26
-\author Estiven Delgado <yeisondelgado@unicauca.edu.co>
-\author Alejandra Benavides <vbenavides@unicauca.edu.co>
-\brief  Functions Handler LCD 16x2 mode 4 bits.
+ * @file   lcd.h
+ * @date   2023-09-27
+ * @brief  Functions Handler LCD 16x2 mode 4 bits.
+ *
+ * @details
+ * This file contains the functions to interact with an LCD 16x2 in 4-bit mode.
+ *
+ * @par Copyright
+ * Information contained herein is proprietary to and constitutes valuable
+ * confidential trade secrets of unicauca, and
+ * is subject to restrictions on use and disclosure.
+ *
+ * @par
+ * Copyright (c) unicauca 2023. All rights reserved.
+ *
+ * @par
+ * The copyright notices above do not evidence any actual or
+ * intended publication of this material.
+ ******************************************************************************
+ */
 
-\par Copyright
-Information contained herein is proprietary to and constitutes valuable
-confidential trade secrets of unicauca, and
-is subject to restrictions on use and disclosure.
-
-\par
-Copyright (c) unicauca 2023. All rights reserved.
-
-\par
-The copyright notices above do not evidence any actual or
-intended publication of this material.
-******************************************************************************
-*/
 
 #ifndef LCD_H
 #define	LCD_H

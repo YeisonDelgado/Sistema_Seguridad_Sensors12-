@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"43 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X/Funciones_Estado.h
+"42 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X/Funciones_Estado.h
 [e E1270 State `uc
 security 0
 monitoring 1
@@ -54,67 +54,67 @@ alarm_environment 5
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"43 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
+"32 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
 [v _function_Monitoring function_Monitoring `(v  1 e 1 0 ]
-"71
+"57
 [v _function_Security function_Security `(v  1 e 1 0 ]
-"123
+"105
 [v _function_Locked function_Locked `(v  1 e 1 0 ]
-"145
+"124
 [v _function_Alarm function_Alarm `(v  1 e 1 0 ]
-"171
-[v _function_Environment_alarm function_Environment_alarm `(v  1 e 1 0 ]
-"206
+"148
 [v _function_Environment function_Environment `(v  1 e 1 0 ]
-"39 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\keypad.c
+"182
+[v _function_Environment_alarm function_Environment_alarm `(v  1 e 1 0 ]
+"36 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\keypad.c
 [v _keypad_init keypad_init `(v  1 e 1 0 ]
-"58
-[v _keypad_getkey keypad_getkey `(uc  1 e 1 0 ]
-"38 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\lcd.c
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-"61
-[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
-"89
-[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-"117
-[v _LCD_String LCD_String `(v  1 e 1 0 ]
-"138
-[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
-"166
-[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
-"30 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Main_Seguridad.c
-[v _main main `(v  1 e 1 0 ]
-"42 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
-[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"61
-[v _Use_Chanel Use_Chanel `(i  1 e 2 0 ]
-"84
-[v _Calculus_Temperature Calculus_Temperature `(i  1 e 2 0 ]
-"104
-[v _Sensors_IHM Sensors_IHM `(uc  1 e 1 0 ]
-"43 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X/Funciones_Estado.h
-[v _Estado Estado `E1270  1 e 1 0 ]
-"44
-[v _var_sensor_ir var_sensor_ir `uc  1 e 1 0 ]
-"45
-[v _var_sensor_hall var_sensor_hall `uc  1 e 1 0 ]
-"46
-[v _var_sensor_metal var_sensor_metal `uc  1 e 1 0 ]
-"47
-[v _intend intend `uc  1 e 1 0 ]
-"49
-[v _password password `DC[5]uc  1 e 5 0 ]
-"50
-[v _pass_user pass_user `[5]uc  1 e 5 0 ]
-"51
-[v _idx idx `uc  1 e 1 0 ]
 "53
+[v _keypad_getkey keypad_getkey `(uc  1 e 1 0 ]
+"36 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\lcd.c
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"56
+[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
+"80
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+"104
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+"124
+[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
+"149
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+"38 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Main_Seguridad.c
+[v _main main `(v  1 e 1 0 ]
+"38 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"54
+[v _Use_Channel Use_Channel `(i  1 e 2 0 ]
+"75
+[v _Calculus_Temperature Calculus_Temperature `(i  1 e 2 0 ]
+"92
+[v _Sensors_IHM Sensors_IHM `(uc  1 e 1 0 ]
+"42 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X/Funciones_Estado.h
+[v _Estado Estado `E1270  1 e 1 0 ]
+"43
+[v _var_sensor_ir var_sensor_ir `uc  1 e 1 0 ]
+"44
+[v _var_sensor_hall var_sensor_hall `uc  1 e 1 0 ]
+"45
+[v _var_sensor_metal var_sensor_metal `uc  1 e 1 0 ]
+"46
+[v _intend intend `uc  1 e 1 0 ]
+"48
+[v _password password `DC[5]uc  1 e 5 0 ]
+"49
+[v _pass_user pass_user `[5]uc  1 e 5 0 ]
+"50
+[v _idx idx `uc  1 e 1 0 ]
+"52
 [v _buffer buffer `[17]uc  1 e 17 0 ]
 "228 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S144 . 1 `uc 1 RD0 1 0 :1:0 
+[s S145 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -124,19 +124,19 @@ alarm_environment 5
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S153 . 1 `S144 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES153  1 e 1 @8 ]
+[u S154 . 1 `S145 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES154  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S291 . 1 `uc 1 ADON 1 0 :1:0 
+[s S292 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S296 . 1 `uc 1 . 1 0 :1:0 
+[s S297 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -145,14 +145,14 @@ alarm_environment 5
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S305 . 1 `uc 1 . 1 0 :1:0 
+[s S306 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S308 . 1 `uc 1 . 1 0 :1:0 
+[s S309 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S311 . 1 `S291 1 . 1 0 `S296 1 . 1 0 `S305 1 . 1 0 `S308 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES311  1 e 1 @31 ]
+[u S312 . 1 `S292 1 . 1 0 `S297 1 . 1 0 `S306 1 . 1 0 `S309 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES312  1 e 1 @31 ]
 [s S88 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
@@ -181,17 +181,19 @@ alarm_environment 5
 [v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S276 . 1 `uc 1 . 1 0 :4:0 
+[s S277 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S282 . 1 `S276 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES282  1 e 1 @159 ]
+[u S283 . 1 `S277 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES283  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4133
 [v _RC0 RC0 `VEb  1 e 0 @56 ]
 "4136
@@ -208,22 +210,22 @@ alarm_environment 5
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"30 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Main_Seguridad.c
+"38 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Main_Seguridad.c
 [v _main main `(v  1 e 1 0 ]
 {
-"66
+"70
 } 0
-"39 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\keypad.c
+"36 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\keypad.c
 [v _keypad_init keypad_init `(v  1 e 1 0 ]
 {
-"44
+"42
 } 0
-"71 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
+"57 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
 [v _function_Security function_Security `(v  1 e 1 0 ]
 {
-"73
+"58
 [v function_Security@key key `uc  1 a 1 13 ]
-"109
+"94
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\strncmp.c
 [v _strncmp strncmp `(i  1 e 2 0 ]
@@ -235,44 +237,51 @@ alarm_environment 5
 [v strncmp@s1 s1 `*.4DCuc  1 a 1 5 ]
 "14
 } 0
-"58 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\keypad.c
+"53 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\keypad.c
 [v _keypad_getkey keypad_getkey `(uc  1 e 1 0 ]
 {
-"60
-[v keypad_getkey@letras letras `[4][4]uc  1 a 16 0 ]
-"64
+"55
+[v keypad_getkey@letters letters `[4][4]uc  1 a 16 0 ]
+"59
 [v keypad_getkey@i i `i  1 a 2 17 ]
-"65
-[v keypad_getkey@valor valor `uc  1 a 1 16 ]
-"58
+"60
+[v keypad_getkey@value value `uc  1 a 1 16 ]
+"53
 [v keypad_getkey@F1268 F1268 `[4][4]uc  1 s 16 F1268 ]
-"108
+"103
 } 0
-"43 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
+"32 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
 [v _function_Monitoring function_Monitoring `(v  1 e 1 0 ]
 {
-"57
+"46
 } 0
-"104 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
+"92 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
 [v _Sensors_IHM Sensors_IHM `(uc  1 e 1 0 ]
 {
-"105
+"93
 [v Sensors_IHM@alarm_activate alarm_activate `uc  1 a 1 0 ]
-"116
+"108
 } 0
-"123 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
+"105 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
 [v _function_Locked function_Locked `(v  1 e 1 0 ]
 {
-"131
+"113
 } 0
-"171
+"182
 [v _function_Environment_alarm function_Environment_alarm `(v  1 e 1 0 ]
 {
-"176
-[v function_Environment_alarm@temperature_celsius temperature_celsius `i  1 a 2 49 ]
-"175
-[v function_Environment_alarm@value_temperature value_temperature `i  1 a 2 47 ]
-"192
+"183
+[v function_Environment_alarm@time2 time2 `uc  1 a 1 13 ]
+"195
+} 0
+"148
+[v _function_Environment function_Environment `(v  1 e 1 0 ]
+{
+"153
+[v function_Environment@temperature_celsius temperature_celsius `i  1 a 2 49 ]
+"152
+[v function_Environment@value_temperature value_temperature `i  1 a 2 47 ]
+"170
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -319,22 +328,22 @@ alarm_environment 5
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"61 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
-[v _Use_Chanel Use_Chanel `(i  1 e 2 0 ]
+"54 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
+[v _Use_Channel Use_Channel `(i  1 e 2 0 ]
 {
-[v Use_Chanel@select select `i  1 p 2 0 ]
-"70
+[v Use_Channel@select select `i  1 p 2 0 ]
+"64
 } 0
-"84
+"75
 [v _Calculus_Temperature Calculus_Temperature `(i  1 e 2 0 ]
 {
-"87
+"78
 [v Calculus_Temperature@tempC tempC `f  1 a 4 40 ]
-"85
+"76
 [v Calculus_Temperature@a a `l  1 a 4 24 ]
-"84
+"75
 [v Calculus_Temperature@temperature temperature `i  1 p 2 20 ]
-"90
+"81
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\log.c
 [v _log log `(d  1 e 4 0 ]
@@ -375,17 +384,17 @@ alarm_environment 5
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S697 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S698 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S702 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S705 . 4 `l 1 i 4 0 `d 1 f 4 0 `S697 1 fAsBytes 4 0 `S702 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S705  1 a 4 25 ]
+[s S703 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S706 . 4 `l 1 i 4 0 `d 1 f 4 0 `S698 1 fAsBytes 4 0 `S703 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S706  1 a 4 25 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 20 ]
-[s S774 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S775 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S777 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S774 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S777  1 a 2 29 ]
+[u S778 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S775 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S778  1 a 2 29 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 24 ]
 "11
@@ -479,69 +488,62 @@ alarm_environment 5
 [v ___fldiv@b b `d  1 p 4 35 ]
 "185
 } 0
-"206 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
-[v _function_Environment function_Environment `(v  1 e 1 0 ]
-{
-"207
-[v function_Environment@time2 time2 `uc  1 a 1 13 ]
-"218
-} 0
-"145
+"124 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Funciones_Estado.c
 [v _function_Alarm function_Alarm `(v  1 e 1 0 ]
 {
-"146
+"125
 [v function_Alarm@time time `uc  1 a 1 13 ]
-"157
+"137
 } 0
-"138 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\lcd.c
+"124 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\lcd.c
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
 {
 [v LCD_String_xy@row row `uc  1 a 1 wreg ]
-"140
+"126
 [v LCD_String_xy@location location `uc  1 a 1 9 ]
-"138
+"124
 [v LCD_String_xy@row row `uc  1 a 1 wreg ]
 [v LCD_String_xy@pos pos `uc  1 p 1 5 ]
 [v LCD_String_xy@msg msg `*.26DCuc  1 p 2 6 ]
 [v LCD_String_xy@row row `uc  1 a 1 8 ]
-"152
+"138
 } 0
-"117
+"104
 [v _LCD_String LCD_String `(v  1 e 1 0 ]
 {
 [v LCD_String@msg msg `*.26DCuc  1 p 2 3 ]
-"124
+"111
 } 0
-"89
+"80
 [v _LCD_Char LCD_Char `(v  1 e 1 0 ]
 {
 [v LCD_Char@dat dat `uc  1 a 1 wreg ]
 [v LCD_Char@dat dat `uc  1 a 1 wreg ]
-"91
+"82
 [v LCD_Char@dat dat `uc  1 a 1 2 ]
-"102
+"93
 } 0
-"166
+"149
 [v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
 {
-"170
+"153
 } 0
-"38
+"36
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
-"46
+"44
 } 0
-"61
+"56
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
 {
 [v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
 [v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
-"63
+"58
 [v LCD_Command@cmd cmd `uc  1 a 1 2 ]
-"74
+"69
 } 0
-"42 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
+"38 C:\Users\estiv\MPLABXProjects\ENTREGABLES\Sistema_Seguridad.X\Sensors_Control.c
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
-"47
+"43
 } 0

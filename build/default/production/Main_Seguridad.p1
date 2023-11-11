@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"43 ./Funciones_Estado.h
-[; ;./Funciones_Estado.h: 43: enum State Estado;
+"42 ./Funciones_Estado.h
+[; ;./Funciones_Estado.h: 42: enum State Estado;
 [c E1270 0 1 2 3 4 5 .. ]
 [n E1270 State security monitoring locked alarm environment alarm_environment  ]
 [p mainexit ]
@@ -25,32 +25,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"33 ./Sensors_Control.h
-[; ;./Sensors_Control.h: 33: void ADC_Init(void);
+"25 ./Sensors_Control.h
+[; ;./Sensors_Control.h: 25: void ADC_Init(void);
 [v _ADC_Init `(v ~T0 @X0 0 ef ]
-"34 ./lcd.h
-[; ;./lcd.h: 34: void LCD_Init(void);
+"36 ./lcd.h
+[; ;./lcd.h: 36: void LCD_Init(void);
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
-"53 ./keypad.h
-[; ;./keypad.h: 53: void keypad_init (void);
+"54 ./keypad.h
+[; ;./keypad.h: 54: void keypad_init(void);
 [v _keypad_init `(v ~T0 @X0 0 ef ]
-"55 ./Funciones_Estado.h
-[; ;./Funciones_Estado.h: 55: void function_Security(void);
+"59 ./Funciones_Estado.h
+[; ;./Funciones_Estado.h: 59: void function_Security(void);
 [v _function_Security `(v ~T0 @X0 0 ef ]
-"57
-[; ;./Funciones_Estado.h: 57: void function_Monitoring(void);
+"73
+[; ;./Funciones_Estado.h: 73: void function_Monitoring(void);
 [v _function_Monitoring `(v ~T0 @X0 0 ef ]
-"56
-[; ;./Funciones_Estado.h: 56: void function_Locked(void);
+"66
+[; ;./Funciones_Estado.h: 66: void function_Locked(void);
 [v _function_Locked `(v ~T0 @X0 0 ef ]
-"58
-[; ;./Funciones_Estado.h: 58: void function_Alarm(void);
+"80
+[; ;./Funciones_Estado.h: 80: void function_Alarm(void);
 [v _function_Alarm `(v ~T0 @X0 0 ef ]
-"60
-[; ;./Funciones_Estado.h: 60: void function_Environment_alarm(void);
+"94
+[; ;./Funciones_Estado.h: 94: void function_Environment_alarm(void);
 [v _function_Environment_alarm `(v ~T0 @X0 0 ef ]
-"59
-[; ;./Funciones_Estado.h: 59: void function_Environment(void);
+"87
+[; ;./Funciones_Estado.h: 87: void function_Environment(void);
 [v _function_Environment `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
@@ -286,63 +286,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"34 ./fuses.h
-[p x FOSC  =  INTRC_CLKOUT ]
-"35
-[p x WDTE  =  OFF        ]
+"35 ./fuses.h
+[p x FOSC  =  INTRC_CLKOUT  ]
 "36
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF          ]
 "37
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF         ]
 "38
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF         ]
 "39
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF            ]
 "40
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF           ]
 "41
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF         ]
 "42
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF          ]
 "43
-[p x LVP  =  OFF         ]
-"46
-[p x BOR4V  =  BOR40V    ]
-"47
-[p x WRT  =  OFF         ]
-"50
-[p x BOR4V  =  BOR40V    ]
-"51
-[p x WRT  =  OFF         ]
-"43 ./Funciones_Estado.h
-[; ;./Funciones_Estado.h: 43: enum State Estado;
-[v _Estado `E1270 ~T0 @X0 1 e ]
+[p x FCMEN  =  OFF         ]
 "44
-[; ;./Funciones_Estado.h: 44: unsigned char var_sensor_ir = 0;
+[p x LVP  =  OFF           ]
+"47
+[p x BOR4V  =  BOR40V      ]
+"48
+[p x WRT  =  OFF           ]
+"51
+[p x BOR4V  =  BOR40V      ]
+"52
+[p x WRT  =  OFF           ]
+"42 ./Funciones_Estado.h
+[; ;./Funciones_Estado.h: 42: enum State Estado;
+[v _Estado `E1270 ~T0 @X0 1 e ]
+"43
+[; ;./Funciones_Estado.h: 43: unsigned char var_sensor_ir = 0;
 [v _var_sensor_ir `uc ~T0 @X0 1 e ]
 [i _var_sensor_ir
 -> -> 0 `i `uc
 ]
-"45
-[; ;./Funciones_Estado.h: 45: unsigned char var_sensor_hall = 0;
+"44
+[; ;./Funciones_Estado.h: 44: unsigned char var_sensor_hall = 0;
 [v _var_sensor_hall `uc ~T0 @X0 1 e ]
 [i _var_sensor_hall
 -> -> 0 `i `uc
 ]
-"46
-[; ;./Funciones_Estado.h: 46: unsigned char var_sensor_metal = 0;
+"45
+[; ;./Funciones_Estado.h: 45: unsigned char var_sensor_metal = 0;
 [v _var_sensor_metal `uc ~T0 @X0 1 e ]
 [i _var_sensor_metal
 -> -> 0 `i `uc
 ]
-"47
-[; ;./Funciones_Estado.h: 47: unsigned char intend = 0;
+"46
+[; ;./Funciones_Estado.h: 46: unsigned char intend = 0;
 [v _intend `uc ~T0 @X0 1 e ]
 [i _intend
 -> -> 0 `i `uc
 ]
-"49
-[; ;./Funciones_Estado.h: 49: const char password[5] ={'2','0','2','3','0'};
+"48
+[; ;./Funciones_Estado.h: 48: const char password[5] = { '2', '0', '2', '3', '0' };
 [v _password `Cuc ~T0 @X0 -> 5 `i e ]
 [i _password
 :U ..
@@ -353,149 +353,139 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 48 `ui `uc
 ..
 ]
-"50
-[; ;./Funciones_Estado.h: 50: char pass_user[5];
+"49
+[; ;./Funciones_Estado.h: 49: char pass_user[5];
 [v _pass_user `uc ~T0 @X0 -> 5 `i e ]
-"51
-[; ;./Funciones_Estado.h: 51: unsigned char idx = 0;
+"50
+[; ;./Funciones_Estado.h: 50: unsigned char idx = 0;
 [v _idx `uc ~T0 @X0 1 e ]
 [i _idx
 -> -> 0 `i `uc
 ]
-"52
-[; ;./Funciones_Estado.h: 52: unsigned char system_lock = 0;
+"51
+[; ;./Funciones_Estado.h: 51: unsigned char system_lock = 0;
 [v _system_lock `uc ~T0 @X0 1 e ]
 [i _system_lock
 -> -> 0 `i `uc
 ]
-"53
-[; ;./Funciones_Estado.h: 53: char buffer [17];
+"52
+[; ;./Funciones_Estado.h: 52: char buffer[17];
 [v _buffer `uc ~T0 @X0 -> 17 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"30 Main_Seguridad.c
-[; ;Main_Seguridad.c: 30: void main(){
+"38 Main_Seguridad.c
+[; ;Main_Seguridad.c: 38: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"32
-[; ;Main_Seguridad.c: 32:     OSCCON = 0x71;
-[e = _OSCCON -> -> 113 `i `uc ]
-"33
-[; ;Main_Seguridad.c: 33:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"34
-[; ;Main_Seguridad.c: 34:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
-"35
-[; ;Main_Seguridad.c: 35:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"36
-[; ;Main_Seguridad.c: 36:     TRISC = 0x07;
-[e = _TRISC -> -> 7 `i `uc ]
-"37
-[; ;Main_Seguridad.c: 37:     TRISA = 0b00010011;
-[e = _TRISA -> -> 19 `i `uc ]
-"38
-[; ;Main_Seguridad.c: 38:     ANSEL = 0b00010011;
-[e = _ANSEL -> -> 19 `i `uc ]
 "40
-[; ;Main_Seguridad.c: 40:     ADC_Init();
-[e ( _ADC_Init ..  ]
+[; ;Main_Seguridad.c: 40:     OSCCON = 0x71;
+[e = _OSCCON -> -> 113 `i `uc ]
 "41
-[; ;Main_Seguridad.c: 41:     LCD_Init();
-[e ( _LCD_Init ..  ]
+[; ;Main_Seguridad.c: 41:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "42
-[; ;Main_Seguridad.c: 42:     keypad_init();
-[e ( _keypad_init ..  ]
+[; ;Main_Seguridad.c: 42:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"43
+[; ;Main_Seguridad.c: 43:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
 "44
-[; ;Main_Seguridad.c: 44:     Estado = security;
-[e = _Estado . `E1270 0 ]
+[; ;Main_Seguridad.c: 44:     TRISC = 0x07;
+[e = _TRISC -> -> 7 `i `uc ]
+"45
+[; ;Main_Seguridad.c: 45:     TRISA = 0b00010011;
+[e = _TRISA -> -> 19 `i `uc ]
 "46
-[; ;Main_Seguridad.c: 46:     while (1) {
+[; ;Main_Seguridad.c: 46:     ANSEL = 0b00010011;
+[e = _ANSEL -> -> 19 `i `uc ]
+"48
+[; ;Main_Seguridad.c: 48:     ADC_Init();
+[e ( _ADC_Init ..  ]
+"49
+[; ;Main_Seguridad.c: 49:     LCD_Init();
+[e ( _LCD_Init ..  ]
+"50
+[; ;Main_Seguridad.c: 50:     keypad_init();
+[e ( _keypad_init ..  ]
+"52
+[; ;Main_Seguridad.c: 52:     Estado = security;
+[e = _Estado . `E1270 0 ]
+"54
+[; ;Main_Seguridad.c: 54:     while (1) {
 [e :U 140 ]
 {
-"47
-[; ;Main_Seguridad.c: 47:         if(Estado == security){
+"56
+[; ;Main_Seguridad.c: 56:         if (Estado == security) {
 [e $ ! == -> _Estado `ui -> . `E1270 0 `ui 142  ]
 {
-"48
-[; ;Main_Seguridad.c: 48:             function_Security();
+"57
+[; ;Main_Seguridad.c: 57:             function_Security();
 [e ( _function_Security ..  ]
-"49
-[; ;Main_Seguridad.c: 49:         }
+"58
+[; ;Main_Seguridad.c: 58:         } else if (Estado == monitoring) {
 }
 [e $U 143  ]
-"50
-[; ;Main_Seguridad.c: 50:         else if(Estado == monitoring){
 [e :U 142 ]
 [e $ ! == -> _Estado `ui -> . `E1270 1 `ui 144  ]
 {
-"51
-[; ;Main_Seguridad.c: 51:             function_Monitoring();
+"59
+[; ;Main_Seguridad.c: 59:             function_Monitoring();
 [e ( _function_Monitoring ..  ]
-"52
-[; ;Main_Seguridad.c: 52:         }
+"60
+[; ;Main_Seguridad.c: 60:         } else if (Estado == locked) {
 }
 [e $U 145  ]
-"53
-[; ;Main_Seguridad.c: 53:         else if(Estado == locked){
 [e :U 144 ]
 [e $ ! == -> _Estado `ui -> . `E1270 2 `ui 146  ]
 {
-"54
-[; ;Main_Seguridad.c: 54:             function_Locked();
+"61
+[; ;Main_Seguridad.c: 61:             function_Locked();
 [e ( _function_Locked ..  ]
-"55
-[; ;Main_Seguridad.c: 55:         }
+"62
+[; ;Main_Seguridad.c: 62:         } else if (Estado == alarm) {
 }
 [e $U 147  ]
-"56
-[; ;Main_Seguridad.c: 56:         else if(Estado == alarm){
 [e :U 146 ]
 [e $ ! == -> _Estado `ui -> . `E1270 3 `ui 148  ]
 {
-"57
-[; ;Main_Seguridad.c: 57:             function_Alarm();
+"63
+[; ;Main_Seguridad.c: 63:             function_Alarm();
 [e ( _function_Alarm ..  ]
-"58
-[; ;Main_Seguridad.c: 58:         }
+"64
+[; ;Main_Seguridad.c: 64:         } else if (Estado == alarm_environment) {
 }
 [e $U 149  ]
-"59
-[; ;Main_Seguridad.c: 59:         else if(Estado == alarm_environment){
 [e :U 148 ]
 [e $ ! == -> _Estado `ui -> . `E1270 5 `ui 150  ]
 {
-"60
-[; ;Main_Seguridad.c: 60:             function_Environment_alarm();
+"65
+[; ;Main_Seguridad.c: 65:             function_Environment_alarm();
 [e ( _function_Environment_alarm ..  ]
-"61
-[; ;Main_Seguridad.c: 61:         }
+"66
+[; ;Main_Seguridad.c: 66:         } else {
 }
 [e $U 151  ]
-"62
-[; ;Main_Seguridad.c: 62:         else{
 [e :U 150 ]
 {
-"63
-[; ;Main_Seguridad.c: 63:             function_Environment();
+"67
+[; ;Main_Seguridad.c: 67:             function_Environment();
 [e ( _function_Environment ..  ]
-"64
-[; ;Main_Seguridad.c: 64:         }
+"68
+[; ;Main_Seguridad.c: 68:         }
 }
 [e :U 151 ]
 [e :U 149 ]
 [e :U 147 ]
 [e :U 145 ]
 [e :U 143 ]
-"65
-[; ;Main_Seguridad.c: 65:     }
+"69
+[; ;Main_Seguridad.c: 69:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"66
-[; ;Main_Seguridad.c: 66: }
+"70
+[; ;Main_Seguridad.c: 70: }
 [e :UE 138 ]
 }

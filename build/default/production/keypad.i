@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "keypad.c" 2
-# 22 "keypad.c"
+# 23 "keypad.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,16 +2488,16 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 22 "keypad.c" 2
-
-# 1 "./keypad.h" 1
-# 53 "./keypad.h"
-void keypad_init (void);
-char keypad_getkey(void);
 # 23 "keypad.c" 2
 
+# 1 "./keypad.h" 1
+# 54 "./keypad.h"
+void keypad_init(void);
+char keypad_getkey(void);
+# 24 "keypad.c" 2
+
 # 1 "./fuses.h" 1
-# 34 "./fuses.h"
+# 35 "./fuses.h"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2516,23 +2516,24 @@ char keypad_getkey(void);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 24 "keypad.c" 2
-# 39 "keypad.c"
+# 25 "keypad.c" 2
+# 36 "keypad.c"
 void keypad_init(void){
 
     TRISB &= ~(1<<0) & ~(1<<1) & ~(1<<2) & ~(1<<3);
     TRISB |= (1<<4) | (1<<5) | (1<<6) | (1<<7);
     OPTION_REGbits.nRBPU = 0;
+    ANSELH = 0;
 }
-# 58 "keypad.c"
+# 53 "keypad.c"
 char keypad_getkey(void){
 
-char letras[4][4]={ {'1','2','3','A'},
+char letters[4][4]={ {'1','2','3','A'},
                      {'4','5','6','B'},
                      {'7','8','9','C'},
                      {'*','0','#','D'}};
 int i=0;
-char valor=0;
+char value=0;
 
 for(i=0;i<4;i++){
 
@@ -2540,39 +2541,39 @@ for(i=0;i<4;i++){
 
       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(1<<2)|(1<<1)|(0<<0);
       _delay((unsigned long)((100)*(8000000/4000000.0)));
-      while (!(PORTB & (1<<4))){valor=letras[0][0];}
-      while (!(PORTB & (1<<5))){valor=letras[0][1];}
-      while (!(PORTB & (1<<6))){valor=letras[0][2];}
-      while (!(PORTB & (1<<7))){valor=letras[0][3];}
+      while (!(PORTB & (1<<4))){value=letters[0][0];}
+      while (!(PORTB & (1<<5))){value=letters[0][1];}
+      while (!(PORTB & (1<<6))){value=letters[0][2];}
+      while (!(PORTB & (1<<7))){value=letters[0][3];}
    }
 
    if(i==1){
       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(1<<2)|(0<<1)|(1<<0);
       _delay((unsigned long)((100)*(8000000/4000000.0)));
-      while (!(PORTB & (1<<4))){valor=letras[1][0];}
-      while (!(PORTB & (1<<5))){valor=letras[1][1];}
-      while (!(PORTB & (1<<6))){valor=letras[1][2];}
-      while (!(PORTB & (1<<7))){valor=letras[1][3];}
+      while (!(PORTB & (1<<4))){value=letters[1][0];}
+      while (!(PORTB & (1<<5))){value=letters[1][1];}
+      while (!(PORTB & (1<<6))){value=letters[1][2];}
+      while (!(PORTB & (1<<7))){value=letters[1][3];}
    }
 
    if(i==2){
       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(0<<2)|(1<<1)|(1<<0);
       _delay((unsigned long)((100)*(8000000/4000000.0)));
-      while (!(PORTB & (1<<4))){valor=letras[2][0];}
-      while (!(PORTB & (1<<5))){valor=letras[2][1];}
-      while (!(PORTB & (1<<6))){valor=letras[2][2];}
-      while (!(PORTB & (1<<7))){valor=letras[2][3];}
+      while (!(PORTB & (1<<4))){value=letters[2][0];}
+      while (!(PORTB & (1<<5))){value=letters[2][1];}
+      while (!(PORTB & (1<<6))){value=letters[2][2];}
+      while (!(PORTB & (1<<7))){value=letters[2][3];}
    }
 
    if(i==3){
       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(0<<3)|(1<<2)|(1<<1)|(1<<0);
       _delay((unsigned long)((100)*(8000000/4000000.0)));
-      while (!(PORTB & (1<<4))){valor=letras[3][0];}
-      while (!(PORTB & (1<<5))){valor=letras[3][1];}
-      while (!(PORTB & (1<<6))){valor=letras[3][2];}
-      while (!(PORTB & (1<<7))){valor=letras[3][3];}
+      while (!(PORTB & (1<<4))){value=letters[3][0];}
+      while (!(PORTB & (1<<5))){value=letters[3][1];}
+      while (!(PORTB & (1<<6))){value=letters[3][2];}
+      while (!(PORTB & (1<<7))){value=letters[3][3];}
       }
    }
 
-   return valor;
+   return value;
 }

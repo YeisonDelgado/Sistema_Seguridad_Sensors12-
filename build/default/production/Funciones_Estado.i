@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Funciones_Estado.c" 2
-# 22 "Funciones_Estado.c"
+# 14 "Funciones_Estado.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,18 +2488,18 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 22 "Funciones_Estado.c" 2
+# 14 "Funciones_Estado.c" 2
 
 # 1 "./Sensors_Control.h" 1
-# 33 "./Sensors_Control.h"
+# 25 "./Sensors_Control.h"
 void ADC_Init(void);
-int Use_Chanel(int select);
+int Use_Channel(int select);
 int Calculus_Temperature(int temperature);
 unsigned char Sensors_IHM(void);
-# 23 "Funciones_Estado.c" 2
+# 15 "Funciones_Estado.c" 2
 
 # 1 "./fuses.h" 1
-# 34 "./fuses.h"
+# 35 "./fuses.h"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2518,11 +2518,11 @@ unsigned char Sensors_IHM(void);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 24 "Funciones_Estado.c" 2
+# 16 "Funciones_Estado.c" 2
 
 # 1 "./Funciones_Estado.h" 1
-# 35 "./Funciones_Estado.h"
-enum State{
+# 34 "./Funciones_Estado.h"
+enum State {
     security,
     monitoring,
     locked,
@@ -2536,35 +2536,70 @@ unsigned char var_sensor_hall = 0;
 unsigned char var_sensor_metal = 0;
 unsigned char intend = 0;
 
-const char password[5] ={'2','0','2','3','0'};
+const char password[5] = { '2', '0', '2', '3', '0' };
 char pass_user[5];
 unsigned char idx = 0;
 unsigned char system_lock = 0;
-char buffer [17];
+char buffer[17];
+
+
+
+
+
 
 void function_Security(void);
+
+
+
+
+
+
 void function_Locked(void);
+
+
+
+
+
+
 void function_Monitoring(void);
+
+
+
+
+
+
 void function_Alarm(void);
+
+
+
+
+
+
 void function_Environment(void);
+
+
+
+
+
+
 void function_Environment_alarm(void);
-# 25 "Funciones_Estado.c" 2
+# 17 "Funciones_Estado.c" 2
 
 # 1 "./lcd.h" 1
-# 34 "./lcd.h"
+# 36 "./lcd.h"
 void LCD_Init(void);
 void LCD_Command(unsigned char );
 void LCD_Char(unsigned char x);
 void LCD_String(const char *);
 void LCD_String_xy(char, char , const char *);
 void LCD_Clear(void);
-# 26 "Funciones_Estado.c" 2
+# 18 "Funciones_Estado.c" 2
 
 # 1 "./keypad.h" 1
-# 53 "./keypad.h"
-void keypad_init (void);
+# 54 "./keypad.h"
+void keypad_init(void);
 char keypad_getkey(void);
-# 27 "Funciones_Estado.c" 2
+# 19 "Funciones_Estado.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2659,7 +2694,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 28 "Funciones_Estado.c" 2
+# 20 "Funciones_Estado.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\string.h" 3
@@ -2692,121 +2727,123 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 29 "Funciones_Estado.c" 2
-# 43 "Funciones_Estado.c"
-void function_Monitoring(void){
+# 21 "Funciones_Estado.c" 2
+# 32 "Funciones_Estado.c"
+void function_Monitoring(void) {
     var_sensor_ir = RC1;
     var_sensor_hall = RC0;
     var_sensor_metal = RC2;
 
-    if (Sensors_IHM() == 1){
+    if (Sensors_IHM() == 1) {
         Estado = alarm;
-        int n = sprintf(buffer, "IR %d, H %d, MT %d", var_sensor_ir, var_sensor_hall,var_sensor_metal);
-        LCD_String_xy(0,0,buffer);
+        int n = sprintf(buffer, "IR %d, H %d, MT %d", var_sensor_ir, var_sensor_hall, var_sensor_metal);
+        LCD_String_xy(0, 0, buffer);
         _delay((unsigned long)((1000)*(8000000/4000.0)));
-    }else{
+    } else {
         _delay((unsigned long)((2000)*(8000000/4000.0)));
         Estado = environment;
     }
 }
-# 71 "Funciones_Estado.c"
-void function_Security(void){
-
+# 57 "Funciones_Estado.c"
+void function_Security(void) {
     char key = '0';
     LCD_Clear();
-    LCD_String_xy(0,0,"Press a Key");
+    LCD_String_xy(0, 0, "Press a Key");
     LCD_Command(0xC0);
 
-    do{
+    do {
         key = keypad_getkey();
-        if(key != 0){
+        if (key != 0) {
             LCD_Char('*');
 
             pass_user[idx++] = key;
         }
+    } while (idx < 5);
 
-    }while(idx < 5);
-    if(strncmp(pass_user,password,4) == 0){
+    if (strncmp(pass_user, password, 4) == 0) {
         LCD_Clear();
-        LCD_String_xy(0,0,"Clave Correcta");
+        LCD_String_xy(0, 0, "Clave Correcta");
         RE1 = 1;
         _delay((unsigned long)((2000)*(8000000/4000.0)));
         RE1 = 0;
         Estado = monitoring;
-
-    }else{
+    } else {
         LCD_Clear();
-        LCD_String_xy(0,0,"Clave Incorrecta");
+        LCD_String_xy(0, 0, "Clave Incorrecta");
         RE2 = 1;
         _delay((unsigned long)((1000)*(8000000/4000.0)));
         RE2 = 0;
         intend++;
         idx = 0;
     }
-    if(intend > 3){
+
+    if (intend > 3) {
         intend = 0;
         idx = 0;
         Estado = locked;
     }
 }
-# 123 "Funciones_Estado.c"
-void function_Locked(void){
+# 105 "Funciones_Estado.c"
+void function_Locked(void) {
     LCD_Clear();
-    LCD_String_xy(0,0,"Block System");
+    LCD_String_xy(0, 0, "Block System");
     RE0 = 1;
     _delay((unsigned long)((10000)*(8000000/4000.0)));
     RE0 = 0;
     LCD_Clear();
     Estado = security;
 }
-# 145 "Funciones_Estado.c"
-void function_Alarm(void){
+# 124 "Funciones_Estado.c"
+void function_Alarm(void) {
     unsigned char time = 0;
     LCD_Clear();
-    LCD_String_xy(0,0,"NO AUTORIZADO!!");
-    while(time < 5){
+    LCD_String_xy(0, 0, "NO AUTORIZADO!!");
+    while (time < 5) {
         RE0 = 1;
         _delay((unsigned long)((500)*(8000000/4000.0)));
         RE0 = 0;
         _delay((unsigned long)((500)*(8000000/4000.0)));
         time++;
     }
+
     Estado = monitoring;
 }
-# 171 "Funciones_Estado.c"
-void function_Environment_alarm(void){
+# 148 "Funciones_Estado.c"
+void function_Environment(void) {
     LCD_Clear();
-    LCD_String_xy(0,0,"Temperatura Amb");
-    int value_potenciometro = Use_Chanel(0);
-    int value_temperature = Use_Chanel(1);
+    LCD_String_xy(0, 0, "Temperatura Amb");
+    int value_potenciometro = Use_Channel(1);
+    int value_temperature = Use_Channel(0);
     int temperature_celsius = Calculus_Temperature(value_temperature);
-    int value_fotocelda = Use_Chanel(4);
+    int value_fotocelda = Use_Channel(4);
     _delay((unsigned long)((500)*(8000000/4000.0)));
-    int n = sprintf(buffer, "TS %d",temperature_celsius);
-    LCD_String_xy(0,0,buffer);
+    LCD_Clear();
+    int n = sprintf(buffer, "TS %d", temperature_celsius);
+    LCD_String_xy(0, 0, buffer);
     _delay((unsigned long)((2000)*(8000000/4000.0)));
 
-    if(temperature_celsius > 30){
+    if (temperature_celsius > 25) {
         Estado = alarm_environment;
-    }
-    else{
+    } else {
         Estado = environment;
     }
+
     LCD_Clear();
     _delay((unsigned long)((3000)*(8000000/4000.0)));
     Estado = monitoring;
 }
-# 206 "Funciones_Estado.c"
-void function_Environment(void){
+# 182 "Funciones_Estado.c"
+void function_Environment_alarm(void) {
     unsigned char time2 = 0;
     LCD_Clear();
-    LCD_String_xy(0,0,"Que Calor :(");
-    while(time2 < 5){
+    LCD_String_xy(0, 0, "Temperature > 25 C");
+    while (time2 < 5) {
         RE2 = 1;
         _delay((unsigned long)((500)*(8000000/4000.0)));
         RE2 = 0;
         _delay((unsigned long)((500)*(8000000/4000.0)));
         time2++;
     }
+
     Estado = monitoring;
 }

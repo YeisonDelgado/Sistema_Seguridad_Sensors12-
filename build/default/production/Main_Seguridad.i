@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Main_Seguridad.c" 2
-# 22 "Main_Seguridad.c"
+# 21 "Main_Seguridad.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,11 +2488,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 22 "Main_Seguridad.c" 2
+# 21 "Main_Seguridad.c" 2
 
 
 # 1 "./fuses.h" 1
-# 34 "./fuses.h"
+# 35 "./fuses.h"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2511,19 +2511,19 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 24 "Main_Seguridad.c" 2
+# 23 "Main_Seguridad.c" 2
 
 # 1 "./Sensors_Control.h" 1
-# 33 "./Sensors_Control.h"
+# 25 "./Sensors_Control.h"
 void ADC_Init(void);
-int Use_Chanel(int select);
+int Use_Channel(int select);
 int Calculus_Temperature(int temperature);
 unsigned char Sensors_IHM(void);
-# 25 "Main_Seguridad.c" 2
+# 24 "Main_Seguridad.c" 2
 
 # 1 "./Funciones_Estado.h" 1
-# 35 "./Funciones_Estado.h"
-enum State{
+# 34 "./Funciones_Estado.h"
+enum State {
     security,
     monitoring,
     locked,
@@ -2537,38 +2537,72 @@ unsigned char var_sensor_hall = 0;
 unsigned char var_sensor_metal = 0;
 unsigned char intend = 0;
 
-const char password[5] ={'2','0','2','3','0'};
+const char password[5] = { '2', '0', '2', '3', '0' };
 char pass_user[5];
 unsigned char idx = 0;
 unsigned char system_lock = 0;
-char buffer [17];
+char buffer[17];
+
+
+
+
+
 
 void function_Security(void);
+
+
+
+
+
+
 void function_Locked(void);
+
+
+
+
+
+
 void function_Monitoring(void);
+
+
+
+
+
+
 void function_Alarm(void);
+
+
+
+
+
+
 void function_Environment(void);
+
+
+
+
+
+
 void function_Environment_alarm(void);
-# 26 "Main_Seguridad.c" 2
+# 25 "Main_Seguridad.c" 2
 
 # 1 "./lcd.h" 1
-# 34 "./lcd.h"
+# 36 "./lcd.h"
 void LCD_Init(void);
 void LCD_Command(unsigned char );
 void LCD_Char(unsigned char x);
 void LCD_String(const char *);
 void LCD_String_xy(char, char , const char *);
 void LCD_Clear(void);
-# 27 "Main_Seguridad.c" 2
+# 26 "Main_Seguridad.c" 2
 
 # 1 "./keypad.h" 1
-# 53 "./keypad.h"
-void keypad_init (void);
+# 54 "./keypad.h"
+void keypad_init(void);
 char keypad_getkey(void);
-# 28 "Main_Seguridad.c" 2
-
-
-void main(){
+# 27 "Main_Seguridad.c" 2
+# 38 "Main_Seguridad.c"
+void main() {
 
     OSCCON = 0x71;
     TRISE = 0;
@@ -2585,22 +2619,18 @@ void main(){
     Estado = security;
 
     while (1) {
-        if(Estado == security){
+
+        if (Estado == security) {
             function_Security();
-        }
-        else if(Estado == monitoring){
+        } else if (Estado == monitoring) {
             function_Monitoring();
-        }
-        else if(Estado == locked){
+        } else if (Estado == locked) {
             function_Locked();
-        }
-        else if(Estado == alarm){
+        } else if (Estado == alarm) {
             function_Alarm();
-        }
-        else if(Estado == alarm_environment){
+        } else if (Estado == alarm_environment) {
             function_Environment_alarm();
-        }
-        else{
+        } else {
             function_Environment();
         }
     }

@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"43 ./Funciones_Estado.h
-[; ;./Funciones_Estado.h: 43: enum State Estado;
+"42 ./Funciones_Estado.h
+[; ;./Funciones_Estado.h: 42: enum State Estado;
 [c E1270 0 1 2 3 4 5 .. ]
 [n E1270 State security monitoring locked alarm environment alarm_environment  ]
 "4136 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
@@ -12,29 +12,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4139
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4139: extern volatile __bit RC2 __attribute__((address(0x3A)));
 [v _RC2 `Vb ~T0 @X0 0 e@58 ]
-"36 ./Sensors_Control.h
-[; ;./Sensors_Control.h: 36: unsigned char Sensors_IHM(void);
+"28 ./Sensors_Control.h
+[; ;./Sensors_Control.h: 28: unsigned char Sensors_IHM(void);
 [v _Sensors_IHM `(uc ~T0 @X0 0 ef ]
 "194 C:\Program Files\Microchip\xc8\v2.41\pic\include\c90\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"38 ./lcd.h
-[; ;./lcd.h: 38: void LCD_String_xy(char, char , const char *);
+"40 ./lcd.h
+[; ;./lcd.h: 40: void LCD_String_xy(char, char , const char *);
 [v _LCD_String_xy `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"39 ./lcd.h
-[; ;./lcd.h: 39: void LCD_Clear(void);
+"41 ./lcd.h
+[; ;./lcd.h: 41: void LCD_Clear(void);
 [v _LCD_Clear `(v ~T0 @X0 0 ef ]
-"35
-[; ;./lcd.h: 35: void LCD_Command(unsigned char );
+"37
+[; ;./lcd.h: 37: void LCD_Command(unsigned char );
 [v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
-"54 ./keypad.h
-[; ;./keypad.h: 54: char keypad_getkey(void);
+"55 ./keypad.h
+[; ;./keypad.h: 55: char keypad_getkey(void);
 [v _keypad_getkey `(uc ~T0 @X0 0 ef ]
-"36 ./lcd.h
-[; ;./lcd.h: 36: void LCD_Char(unsigned char x);
+"38 ./lcd.h
+[; ;./lcd.h: 38: void LCD_Char(unsigned char x);
 [v _LCD_Char `(v ~T0 @X0 0 ef1`uc ]
 "47 C:\Program Files\Microchip\xc8\v2.41\pic\include\c90\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c90\string.h: 47: extern int strncmp(const char *, const char *, size_t);
@@ -48,11 +48,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4205
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4205: extern volatile __bit RE0 __attribute__((address(0x48)));
 [v _RE0 `Vb ~T0 @X0 0 e@72 ]
-"34 ./Sensors_Control.h
-[; ;./Sensors_Control.h: 34: int Use_Chanel(int select);
-[v _Use_Chanel `(i ~T0 @X0 0 ef1`i ]
-"35
-[; ;./Sensors_Control.h: 35: int Calculus_Temperature(int temperature);
+"26 ./Sensors_Control.h
+[; ;./Sensors_Control.h: 26: int Use_Channel(int select);
+[v _Use_Channel `(i ~T0 @X0 0 ef1`i ]
+"27
+[; ;./Sensors_Control.h: 27: int Calculus_Temperature(int temperature);
 [v _Calculus_Temperature `(i ~T0 @X0 0 ef1`i ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
@@ -288,63 +288,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"34 ./fuses.h
-[p x FOSC  =  INTRC_CLKOUT ]
-"35
-[p x WDTE  =  OFF        ]
+"35 ./fuses.h
+[p x FOSC  =  INTRC_CLKOUT  ]
 "36
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF          ]
 "37
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF         ]
 "38
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF         ]
 "39
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF            ]
 "40
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF           ]
 "41
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF         ]
 "42
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF          ]
 "43
-[p x LVP  =  OFF         ]
-"46
-[p x BOR4V  =  BOR40V    ]
-"47
-[p x WRT  =  OFF         ]
-"50
-[p x BOR4V  =  BOR40V    ]
-"51
-[p x WRT  =  OFF         ]
-"43 ./Funciones_Estado.h
-[; ;./Funciones_Estado.h: 43: enum State Estado;
-[v _Estado `E1270 ~T0 @X0 1 e ]
+[p x FCMEN  =  OFF         ]
 "44
-[; ;./Funciones_Estado.h: 44: unsigned char var_sensor_ir = 0;
+[p x LVP  =  OFF           ]
+"47
+[p x BOR4V  =  BOR40V      ]
+"48
+[p x WRT  =  OFF           ]
+"51
+[p x BOR4V  =  BOR40V      ]
+"52
+[p x WRT  =  OFF           ]
+"42 ./Funciones_Estado.h
+[; ;./Funciones_Estado.h: 42: enum State Estado;
+[v _Estado `E1270 ~T0 @X0 1 e ]
+"43
+[; ;./Funciones_Estado.h: 43: unsigned char var_sensor_ir = 0;
 [v _var_sensor_ir `uc ~T0 @X0 1 e ]
 [i _var_sensor_ir
 -> -> 0 `i `uc
 ]
-"45
-[; ;./Funciones_Estado.h: 45: unsigned char var_sensor_hall = 0;
+"44
+[; ;./Funciones_Estado.h: 44: unsigned char var_sensor_hall = 0;
 [v _var_sensor_hall `uc ~T0 @X0 1 e ]
 [i _var_sensor_hall
 -> -> 0 `i `uc
 ]
-"46
-[; ;./Funciones_Estado.h: 46: unsigned char var_sensor_metal = 0;
+"45
+[; ;./Funciones_Estado.h: 45: unsigned char var_sensor_metal = 0;
 [v _var_sensor_metal `uc ~T0 @X0 1 e ]
 [i _var_sensor_metal
 -> -> 0 `i `uc
 ]
-"47
-[; ;./Funciones_Estado.h: 47: unsigned char intend = 0;
+"46
+[; ;./Funciones_Estado.h: 46: unsigned char intend = 0;
 [v _intend `uc ~T0 @X0 1 e ]
 [i _intend
 -> -> 0 `i `uc
 ]
-"49
-[; ;./Funciones_Estado.h: 49: const char password[5] ={'2','0','2','3','0'};
+"48
+[; ;./Funciones_Estado.h: 48: const char password[5] = { '2', '0', '2', '3', '0' };
 [v _password `Cuc ~T0 @X0 -> 5 `i e ]
 [i _password
 :U ..
@@ -355,402 +355,403 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 48 `ui `uc
 ..
 ]
-"50
-[; ;./Funciones_Estado.h: 50: char pass_user[5];
+"49
+[; ;./Funciones_Estado.h: 49: char pass_user[5];
 [v _pass_user `uc ~T0 @X0 -> 5 `i e ]
-"51
-[; ;./Funciones_Estado.h: 51: unsigned char idx = 0;
+"50
+[; ;./Funciones_Estado.h: 50: unsigned char idx = 0;
 [v _idx `uc ~T0 @X0 1 e ]
 [i _idx
 -> -> 0 `i `uc
 ]
-"52
-[; ;./Funciones_Estado.h: 52: unsigned char system_lock = 0;
+"51
+[; ;./Funciones_Estado.h: 51: unsigned char system_lock = 0;
 [v _system_lock `uc ~T0 @X0 1 e ]
 [i _system_lock
 -> -> 0 `i `uc
 ]
-"53
-[; ;./Funciones_Estado.h: 53: char buffer [17];
+"52
+[; ;./Funciones_Estado.h: 52: char buffer[17];
 [v _buffer `uc ~T0 @X0 -> 17 `i e ]
-"43 Funciones_Estado.c
-[; ;Funciones_Estado.c: 43: void function_Monitoring(void){
+"32 Funciones_Estado.c
+[; ;Funciones_Estado.c: 32: void function_Monitoring(void) {
 [v _function_Monitoring `(v ~T0 @X0 1 ef ]
 {
 [e :U _function_Monitoring ]
 [f ]
-"44
-[; ;Funciones_Estado.c: 44:     var_sensor_ir = RC1;
+"33
+[; ;Funciones_Estado.c: 33:     var_sensor_ir = RC1;
 [e = _var_sensor_ir -> _RC1 `uc ]
-"45
-[; ;Funciones_Estado.c: 45:     var_sensor_hall = RC0;
+"34
+[; ;Funciones_Estado.c: 34:     var_sensor_hall = RC0;
 [e = _var_sensor_hall -> _RC0 `uc ]
-"46
-[; ;Funciones_Estado.c: 46:     var_sensor_metal = RC2;
+"35
+[; ;Funciones_Estado.c: 35:     var_sensor_metal = RC2;
 [e = _var_sensor_metal -> _RC2 `uc ]
-"48
-[; ;Funciones_Estado.c: 48:     if (Sensors_IHM() == 1){
+"37
+[; ;Funciones_Estado.c: 37:     if (Sensors_IHM() == 1) {
 [e $ ! == -> ( _Sensors_IHM ..  `i -> 1 `i 140  ]
 {
-"49
-[; ;Funciones_Estado.c: 49:         Estado = alarm;
+"38
+[; ;Funciones_Estado.c: 38:         Estado = alarm;
 [e = _Estado . `E1270 3 ]
-"50
-[; ;Funciones_Estado.c: 50:         int n = sprintf(buffer, "IR %d, H %d, MT %d", var_sensor_ir, var_sensor_hall,var_sensor_metal);
+"39
+[; ;Funciones_Estado.c: 39:         int n = sprintf(buffer, "IR %d, H %d, MT %d", var_sensor_ir, var_sensor_hall, var_sensor_metal);
 [v _n `i ~T0 @X0 1 a ]
 [e = _n ( _sprintf (1 , , , (. , &U _buffer :s 1C -> _var_sensor_ir `i -> _var_sensor_hall `i -> _var_sensor_metal `i ]
-"51
-[; ;Funciones_Estado.c: 51:         LCD_String_xy(0,0,buffer);
+"40
+[; ;Funciones_Estado.c: 40:         LCD_String_xy(0, 0, buffer);
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _buffer `*Cuc ]
-"52
-[; ;Funciones_Estado.c: 52:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+"41
+[; ;Funciones_Estado.c: 41:         _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"53
-[; ;Funciones_Estado.c: 53:     }else{
+"42
+[; ;Funciones_Estado.c: 42:     } else {
 }
 [e $U 141  ]
 [e :U 140 ]
 {
-"54
-[; ;Funciones_Estado.c: 54:         _delay((unsigned long)((2000)*(8000000/4000.0)));
+"43
+[; ;Funciones_Estado.c: 43:         _delay((unsigned long)((2000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"55
-[; ;Funciones_Estado.c: 55:         Estado = environment;
+"44
+[; ;Funciones_Estado.c: 44:         Estado = environment;
 [e = _Estado . `E1270 4 ]
-"56
-[; ;Funciones_Estado.c: 56:     }
+"45
+[; ;Funciones_Estado.c: 45:     }
 }
 [e :U 141 ]
-"57
-[; ;Funciones_Estado.c: 57: }
+"46
+[; ;Funciones_Estado.c: 46: }
 [e :UE 139 ]
 }
-"71
-[; ;Funciones_Estado.c: 71: void function_Security(void){
+"57
+[; ;Funciones_Estado.c: 57: void function_Security(void) {
 [v _function_Security `(v ~T0 @X0 1 ef ]
 {
 [e :U _function_Security ]
 [f ]
-"73
-[; ;Funciones_Estado.c: 73:     char key = '0';
+"58
+[; ;Funciones_Estado.c: 58:     char key = '0';
 [v _key `uc ~T0 @X0 1 a ]
 [e = _key -> -> 48 `ui `uc ]
-"74
-[; ;Funciones_Estado.c: 74:     LCD_Clear();
+"59
+[; ;Funciones_Estado.c: 59:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"75
-[; ;Funciones_Estado.c: 75:     LCD_String_xy(0,0,"Press a Key");
+"60
+[; ;Funciones_Estado.c: 60:     LCD_String_xy(0, 0, "Press a Key");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 2C ]
-"76
-[; ;Funciones_Estado.c: 76:     LCD_Command(0xC0);
+"61
+[; ;Funciones_Estado.c: 61:     LCD_Command(0xC0);
 [e ( _LCD_Command (1 -> -> 192 `i `uc ]
-"78
-[; ;Funciones_Estado.c: 78:     do{
+"63
+[; ;Funciones_Estado.c: 63:     do {
 [e :U 145 ]
 {
-"79
-[; ;Funciones_Estado.c: 79:         key = keypad_getkey();
+"64
+[; ;Funciones_Estado.c: 64:         key = keypad_getkey();
 [e = _key ( _keypad_getkey ..  ]
-"80
-[; ;Funciones_Estado.c: 80:         if(key != 0){
+"65
+[; ;Funciones_Estado.c: 65:         if (key != 0) {
 [e $ ! != -> _key `i -> 0 `i 146  ]
 {
-"81
-[; ;Funciones_Estado.c: 81:             LCD_Char('*');
+"66
+[; ;Funciones_Estado.c: 66:             LCD_Char('*');
 [e ( _LCD_Char (1 -> -> 42 `ui `uc ]
-"83
-[; ;Funciones_Estado.c: 83:             pass_user[idx++] = key;
+"68
+[; ;Funciones_Estado.c: 68:             pass_user[idx++] = key;
 [e = *U + &U _pass_user * -> ++ _idx -> -> 1 `i `uc `ux -> -> # *U &U _pass_user `ui `ux _key ]
-"84
-[; ;Funciones_Estado.c: 84:         }
+"69
+[; ;Funciones_Estado.c: 69:         }
 }
 [e :U 146 ]
-"86
-[; ;Funciones_Estado.c: 86:     }while(idx < 5);
+"70
+[; ;Funciones_Estado.c: 70:     } while (idx < 5);
 }
 [e $ < -> _idx `i -> 5 `i 145  ]
 [e :U 144 ]
-"87
-[; ;Funciones_Estado.c: 87:     if(strncmp(pass_user,password,4) == 0){
+"72
+[; ;Funciones_Estado.c: 72:     if (strncmp(pass_user, password, 4) == 0) {
 [e $ ! == ( _strncmp (3 , , -> &U _pass_user `*Cuc &U _password -> -> 4 `i `ui -> 0 `i 147  ]
 {
-"88
-[; ;Funciones_Estado.c: 88:         LCD_Clear();
+"73
+[; ;Funciones_Estado.c: 73:         LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"89
-[; ;Funciones_Estado.c: 89:         LCD_String_xy(0,0,"Clave Correcta");
+"74
+[; ;Funciones_Estado.c: 74:         LCD_String_xy(0, 0, "Clave Correcta");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 3C ]
-"90
-[; ;Funciones_Estado.c: 90:         RE1 = 1;
+"75
+[; ;Funciones_Estado.c: 75:         RE1 = 1;
 [e = _RE1 -> -> 1 `i `b ]
-"91
-[; ;Funciones_Estado.c: 91:         _delay((unsigned long)((2000)*(8000000/4000.0)));
+"76
+[; ;Funciones_Estado.c: 76:         _delay((unsigned long)((2000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"92
-[; ;Funciones_Estado.c: 92:         RE1 = 0;
+"77
+[; ;Funciones_Estado.c: 77:         RE1 = 0;
 [e = _RE1 -> -> 0 `i `b ]
-"93
-[; ;Funciones_Estado.c: 93:         Estado = monitoring;
+"78
+[; ;Funciones_Estado.c: 78:         Estado = monitoring;
 [e = _Estado . `E1270 1 ]
-"95
-[; ;Funciones_Estado.c: 95:     }else{
+"79
+[; ;Funciones_Estado.c: 79:     } else {
 }
 [e $U 148  ]
 [e :U 147 ]
 {
-"96
-[; ;Funciones_Estado.c: 96:         LCD_Clear();
+"80
+[; ;Funciones_Estado.c: 80:         LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"97
-[; ;Funciones_Estado.c: 97:         LCD_String_xy(0,0,"Clave Incorrecta");
+"81
+[; ;Funciones_Estado.c: 81:         LCD_String_xy(0, 0, "Clave Incorrecta");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 4C ]
-"98
-[; ;Funciones_Estado.c: 98:         RE2 = 1;
+"82
+[; ;Funciones_Estado.c: 82:         RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
-"99
-[; ;Funciones_Estado.c: 99:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+"83
+[; ;Funciones_Estado.c: 83:         _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"100
-[; ;Funciones_Estado.c: 100:         RE2 = 0;
+"84
+[; ;Funciones_Estado.c: 84:         RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
-"101
-[; ;Funciones_Estado.c: 101:         intend++;
+"85
+[; ;Funciones_Estado.c: 85:         intend++;
 [e ++ _intend -> -> 1 `i `uc ]
-"102
-[; ;Funciones_Estado.c: 102:         idx = 0;
+"86
+[; ;Funciones_Estado.c: 86:         idx = 0;
 [e = _idx -> -> 0 `i `uc ]
-"103
-[; ;Funciones_Estado.c: 103:     }
+"87
+[; ;Funciones_Estado.c: 87:     }
 }
 [e :U 148 ]
-"104
-[; ;Funciones_Estado.c: 104:     if(intend > 3){
+"89
+[; ;Funciones_Estado.c: 89:     if (intend > 3) {
 [e $ ! > -> _intend `i -> 3 `i 149  ]
 {
-"105
-[; ;Funciones_Estado.c: 105:         intend = 0;
+"90
+[; ;Funciones_Estado.c: 90:         intend = 0;
 [e = _intend -> -> 0 `i `uc ]
-"106
-[; ;Funciones_Estado.c: 106:         idx = 0;
+"91
+[; ;Funciones_Estado.c: 91:         idx = 0;
 [e = _idx -> -> 0 `i `uc ]
-"107
-[; ;Funciones_Estado.c: 107:         Estado = locked;
+"92
+[; ;Funciones_Estado.c: 92:         Estado = locked;
 [e = _Estado . `E1270 2 ]
-"108
-[; ;Funciones_Estado.c: 108:     }
+"93
+[; ;Funciones_Estado.c: 93:     }
 }
 [e :U 149 ]
-"109
-[; ;Funciones_Estado.c: 109: }
+"94
+[; ;Funciones_Estado.c: 94: }
 [e :UE 142 ]
 }
-"123
-[; ;Funciones_Estado.c: 123: void function_Locked(void){
+"105
+[; ;Funciones_Estado.c: 105: void function_Locked(void) {
 [v _function_Locked `(v ~T0 @X0 1 ef ]
 {
 [e :U _function_Locked ]
 [f ]
-"124
-[; ;Funciones_Estado.c: 124:     LCD_Clear();
+"106
+[; ;Funciones_Estado.c: 106:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"125
-[; ;Funciones_Estado.c: 125:     LCD_String_xy(0,0,"Block System");
+"107
+[; ;Funciones_Estado.c: 107:     LCD_String_xy(0, 0, "Block System");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 5C ]
-"126
-[; ;Funciones_Estado.c: 126:     RE0 = 1;
+"108
+[; ;Funciones_Estado.c: 108:     RE0 = 1;
 [e = _RE0 -> -> 1 `i `b ]
-"127
-[; ;Funciones_Estado.c: 127:     _delay((unsigned long)((10000)*(8000000/4000.0)));
+"109
+[; ;Funciones_Estado.c: 109:     _delay((unsigned long)((10000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"128
-[; ;Funciones_Estado.c: 128:     RE0 = 0;
+"110
+[; ;Funciones_Estado.c: 110:     RE0 = 0;
 [e = _RE0 -> -> 0 `i `b ]
-"129
-[; ;Funciones_Estado.c: 129:     LCD_Clear();
+"111
+[; ;Funciones_Estado.c: 111:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"130
-[; ;Funciones_Estado.c: 130:     Estado = security;
+"112
+[; ;Funciones_Estado.c: 112:     Estado = security;
 [e = _Estado . `E1270 0 ]
-"131
-[; ;Funciones_Estado.c: 131: }
+"113
+[; ;Funciones_Estado.c: 113: }
 [e :UE 150 ]
 }
-"145
-[; ;Funciones_Estado.c: 145: void function_Alarm(void){
+"124
+[; ;Funciones_Estado.c: 124: void function_Alarm(void) {
 [v _function_Alarm `(v ~T0 @X0 1 ef ]
 {
 [e :U _function_Alarm ]
 [f ]
-"146
-[; ;Funciones_Estado.c: 146:     unsigned char time = 0;
+"125
+[; ;Funciones_Estado.c: 125:     unsigned char time = 0;
 [v _time `uc ~T0 @X0 1 a ]
 [e = _time -> -> 0 `i `uc ]
-"147
-[; ;Funciones_Estado.c: 147:     LCD_Clear();
+"126
+[; ;Funciones_Estado.c: 126:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"148
-[; ;Funciones_Estado.c: 148:     LCD_String_xy(0,0,"NO AUTORIZADO!!");
+"127
+[; ;Funciones_Estado.c: 127:     LCD_String_xy(0, 0, "NO AUTORIZADO!!");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 6C ]
-"149
-[; ;Funciones_Estado.c: 149:     while(time < 5){
+"128
+[; ;Funciones_Estado.c: 128:     while (time < 5) {
 [e $U 152  ]
 [e :U 153 ]
 {
-"150
-[; ;Funciones_Estado.c: 150:         RE0 = 1;
+"129
+[; ;Funciones_Estado.c: 129:         RE0 = 1;
 [e = _RE0 -> -> 1 `i `b ]
-"151
-[; ;Funciones_Estado.c: 151:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"130
+[; ;Funciones_Estado.c: 130:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"152
-[; ;Funciones_Estado.c: 152:         RE0 = 0;
+"131
+[; ;Funciones_Estado.c: 131:         RE0 = 0;
 [e = _RE0 -> -> 0 `i `b ]
-"153
-[; ;Funciones_Estado.c: 153:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"132
+[; ;Funciones_Estado.c: 132:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"154
-[; ;Funciones_Estado.c: 154:         time++;
+"133
+[; ;Funciones_Estado.c: 133:         time++;
 [e ++ _time -> -> 1 `i `uc ]
-"155
-[; ;Funciones_Estado.c: 155:     }
+"134
+[; ;Funciones_Estado.c: 134:     }
 }
 [e :U 152 ]
-"149
-[; ;Funciones_Estado.c: 149:     while(time < 5){
+"128
+[; ;Funciones_Estado.c: 128:     while (time < 5) {
 [e $ < -> _time `i -> 5 `i 153  ]
 [e :U 154 ]
-"156
-[; ;Funciones_Estado.c: 156:     Estado = monitoring;
+"136
+[; ;Funciones_Estado.c: 136:     Estado = monitoring;
 [e = _Estado . `E1270 1 ]
-"157
-[; ;Funciones_Estado.c: 157: }
+"137
+[; ;Funciones_Estado.c: 137: }
 [e :UE 151 ]
 }
-"171
-[; ;Funciones_Estado.c: 171: void function_Environment_alarm(void){
-[v _function_Environment_alarm `(v ~T0 @X0 1 ef ]
-{
-[e :U _function_Environment_alarm ]
-[f ]
-"172
-[; ;Funciones_Estado.c: 172:     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"173
-[; ;Funciones_Estado.c: 173:     LCD_String_xy(0,0,"Temperatura Amb");
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
-"174
-[; ;Funciones_Estado.c: 174:     int value_potenciometro = Use_Chanel(0);
-[v _value_potenciometro `i ~T0 @X0 1 a ]
-[e = _value_potenciometro ( _Use_Chanel (1 -> 0 `i ]
-"175
-[; ;Funciones_Estado.c: 175:     int value_temperature = Use_Chanel(1);
-[v _value_temperature `i ~T0 @X0 1 a ]
-[e = _value_temperature ( _Use_Chanel (1 -> 1 `i ]
-"176
-[; ;Funciones_Estado.c: 176:     int temperature_celsius = Calculus_Temperature(value_temperature);
-[v _temperature_celsius `i ~T0 @X0 1 a ]
-[e = _temperature_celsius ( _Calculus_Temperature (1 _value_temperature ]
-"177
-[; ;Funciones_Estado.c: 177:     int value_fotocelda = Use_Chanel(4);
-[v _value_fotocelda `i ~T0 @X0 1 a ]
-[e = _value_fotocelda ( _Use_Chanel (1 -> 4 `i ]
-"178
-[; ;Funciones_Estado.c: 178:     _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"179
-[; ;Funciones_Estado.c: 179:     int n = sprintf(buffer, "TS %d",temperature_celsius);
-[v _n `i ~T0 @X0 1 a ]
-[e = _n ( _sprintf (1 , (. , &U _buffer :s 8C _temperature_celsius ]
-"180
-[; ;Funciones_Estado.c: 180:     LCD_String_xy(0,0,buffer);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _buffer `*Cuc ]
-"181
-[; ;Funciones_Estado.c: 181:     _delay((unsigned long)((2000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"183
-[; ;Funciones_Estado.c: 183:     if(temperature_celsius > 30){
-[e $ ! > _temperature_celsius -> 30 `i 156  ]
-{
-"184
-[; ;Funciones_Estado.c: 184:         Estado = alarm_environment;
-[e = _Estado . `E1270 5 ]
-"185
-[; ;Funciones_Estado.c: 185:     }
-}
-[e $U 157  ]
-"186
-[; ;Funciones_Estado.c: 186:     else{
-[e :U 156 ]
-{
-"187
-[; ;Funciones_Estado.c: 187:         Estado = environment;
-[e = _Estado . `E1270 4 ]
-"188
-[; ;Funciones_Estado.c: 188:     }
-}
-[e :U 157 ]
-"189
-[; ;Funciones_Estado.c: 189:     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"190
-[; ;Funciones_Estado.c: 190:     _delay((unsigned long)((3000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"191
-[; ;Funciones_Estado.c: 191:     Estado = monitoring;
-[e = _Estado . `E1270 1 ]
-"192
-[; ;Funciones_Estado.c: 192: }
-[e :UE 155 ]
-}
-"206
-[; ;Funciones_Estado.c: 206: void function_Environment(void){
+"148
+[; ;Funciones_Estado.c: 148: void function_Environment(void) {
 [v _function_Environment `(v ~T0 @X0 1 ef ]
 {
 [e :U _function_Environment ]
 [f ]
-"207
-[; ;Funciones_Estado.c: 207:     unsigned char time2 = 0;
+"149
+[; ;Funciones_Estado.c: 149:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"150
+[; ;Funciones_Estado.c: 150:     LCD_String_xy(0, 0, "Temperatura Amb");
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
+"151
+[; ;Funciones_Estado.c: 151:     int value_potenciometro = Use_Channel(1);
+[v _value_potenciometro `i ~T0 @X0 1 a ]
+[e = _value_potenciometro ( _Use_Channel (1 -> 1 `i ]
+"152
+[; ;Funciones_Estado.c: 152:     int value_temperature = Use_Channel(0);
+[v _value_temperature `i ~T0 @X0 1 a ]
+[e = _value_temperature ( _Use_Channel (1 -> 0 `i ]
+"153
+[; ;Funciones_Estado.c: 153:     int temperature_celsius = Calculus_Temperature(value_temperature);
+[v _temperature_celsius `i ~T0 @X0 1 a ]
+[e = _temperature_celsius ( _Calculus_Temperature (1 _value_temperature ]
+"154
+[; ;Funciones_Estado.c: 154:     int value_fotocelda = Use_Channel(4);
+[v _value_fotocelda `i ~T0 @X0 1 a ]
+[e = _value_fotocelda ( _Use_Channel (1 -> 4 `i ]
+"155
+[; ;Funciones_Estado.c: 155:     _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"156
+[; ;Funciones_Estado.c: 156:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"157
+[; ;Funciones_Estado.c: 157:     int n = sprintf(buffer, "TS %d", temperature_celsius);
+[v _n `i ~T0 @X0 1 a ]
+[e = _n ( _sprintf (1 , (. , &U _buffer :s 8C _temperature_celsius ]
+"158
+[; ;Funciones_Estado.c: 158:     LCD_String_xy(0, 0, buffer);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _buffer `*Cuc ]
+"159
+[; ;Funciones_Estado.c: 159:     _delay((unsigned long)((2000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"161
+[; ;Funciones_Estado.c: 161:     if (temperature_celsius > 25) {
+[e $ ! > _temperature_celsius -> 25 `i 156  ]
+{
+"162
+[; ;Funciones_Estado.c: 162:         Estado = alarm_environment;
+[e = _Estado . `E1270 5 ]
+"163
+[; ;Funciones_Estado.c: 163:     } else {
+}
+[e $U 157  ]
+[e :U 156 ]
+{
+"164
+[; ;Funciones_Estado.c: 164:         Estado = environment;
+[e = _Estado . `E1270 4 ]
+"165
+[; ;Funciones_Estado.c: 165:     }
+}
+[e :U 157 ]
+"167
+[; ;Funciones_Estado.c: 167:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"168
+[; ;Funciones_Estado.c: 168:     _delay((unsigned long)((3000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"169
+[; ;Funciones_Estado.c: 169:     Estado = monitoring;
+[e = _Estado . `E1270 1 ]
+"170
+[; ;Funciones_Estado.c: 170: }
+[e :UE 155 ]
+}
+"182
+[; ;Funciones_Estado.c: 182: void function_Environment_alarm(void) {
+[v _function_Environment_alarm `(v ~T0 @X0 1 ef ]
+{
+[e :U _function_Environment_alarm ]
+[f ]
+"183
+[; ;Funciones_Estado.c: 183:     unsigned char time2 = 0;
 [v _time2 `uc ~T0 @X0 1 a ]
 [e = _time2 -> -> 0 `i `uc ]
-"208
-[; ;Funciones_Estado.c: 208:     LCD_Clear();
+"184
+[; ;Funciones_Estado.c: 184:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"209
-[; ;Funciones_Estado.c: 209:     LCD_String_xy(0,0,"Que Calor :(");
+"185
+[; ;Funciones_Estado.c: 185:     LCD_String_xy(0, 0, "Temperature > 25 C");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 9C ]
-"210
-[; ;Funciones_Estado.c: 210:     while(time2 < 5){
+"186
+[; ;Funciones_Estado.c: 186:     while (time2 < 5) {
 [e $U 159  ]
 [e :U 160 ]
 {
-"211
-[; ;Funciones_Estado.c: 211:         RE2 = 1;
+"187
+[; ;Funciones_Estado.c: 187:         RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
-"212
-[; ;Funciones_Estado.c: 212:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"188
+[; ;Funciones_Estado.c: 188:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"213
-[; ;Funciones_Estado.c: 213:         RE2 = 0;
+"189
+[; ;Funciones_Estado.c: 189:         RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
-"214
-[; ;Funciones_Estado.c: 214:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"190
+[; ;Funciones_Estado.c: 190:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"215
-[; ;Funciones_Estado.c: 215:         time2++;
+"191
+[; ;Funciones_Estado.c: 191:         time2++;
 [e ++ _time2 -> -> 1 `i `uc ]
-"216
-[; ;Funciones_Estado.c: 216:     }
+"192
+[; ;Funciones_Estado.c: 192:     }
 }
 [e :U 159 ]
-"210
-[; ;Funciones_Estado.c: 210:     while(time2 < 5){
+"186
+[; ;Funciones_Estado.c: 186:     while (time2 < 5) {
 [e $ < -> _time2 `i -> 5 `i 160  ]
 [e :U 161 ]
-"217
-[; ;Funciones_Estado.c: 217:     Estado = monitoring;
+"194
+[; ;Funciones_Estado.c: 194:     Estado = monitoring;
 [e = _Estado . `E1270 1 ]
-"218
-[; ;Funciones_Estado.c: 218: }
+"195
+[; ;Funciones_Estado.c: 195: }
 [e :UE 158 ]
 }
 [p f _sprintf 8388736 ]
@@ -761,5 +762,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 7C 84 101 109 112 101 114 97 116 117 114 97 32 65 109 98 0 ]
 [a 4C 67 108 97 118 101 32 73 110 99 111 114 114 101 99 116 97 0 ]
 [a 3C 67 108 97 118 101 32 67 111 114 114 101 99 116 97 0 ]
-[a 9C 81 117 101 32 67 97 108 111 114 32 58 40 0 ]
+[a 9C 84 101 109 112 101 114 97 116 117 114 101 32 62 32 50 53 32 67 0 ]
 [a 6C 78 79 32 65 85 84 79 82 73 90 65 68 79 33 33 0 ]

@@ -17,6 +17,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1366
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1366: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
 [v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
+"3449
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
 "228
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
@@ -258,55 +261,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"34 ./fuses.h
-[p x FOSC  =  INTRC_CLKOUT ]
-"35
-[p x WDTE  =  OFF        ]
+"35 ./fuses.h
+[p x FOSC  =  INTRC_CLKOUT  ]
 "36
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF          ]
 "37
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF         ]
 "38
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF         ]
 "39
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF            ]
 "40
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF           ]
 "41
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF         ]
 "42
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF          ]
 "43
-[p x LVP  =  OFF         ]
-"46
-[p x BOR4V  =  BOR40V    ]
+[p x FCMEN  =  OFF         ]
+"44
+[p x LVP  =  OFF           ]
 "47
-[p x WRT  =  OFF         ]
-"50
-[p x BOR4V  =  BOR40V    ]
+[p x BOR4V  =  BOR40V      ]
+"48
+[p x WRT  =  OFF           ]
 "51
-[p x WRT  =  OFF         ]
-"39 keypad.c
-[; ;keypad.c: 39: void keypad_init(void){
+[p x BOR4V  =  BOR40V      ]
+"52
+[p x WRT  =  OFF           ]
+"36 keypad.c
+[; ;keypad.c: 36: void keypad_init(void){
 [v _keypad_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _keypad_init ]
 [f ]
-"41
-[; ;keypad.c: 41:     TRISB &= ~(1<<0) & ~(1<<1) & ~(1<<2) & ~(1<<3);
+"38
+[; ;keypad.c: 38:     TRISB &= ~(1<<0) & ~(1<<1) & ~(1<<2) & ~(1<<3);
 [e =& _TRISB -> & & & ~ << -> 1 `i -> 0 `i ~ << -> 1 `i -> 1 `i ~ << -> 1 `i -> 2 `i ~ << -> 1 `i -> 3 `i `Vuc ]
-"42
-[; ;keypad.c: 42:     TRISB |= (1<<4) | (1<<5) | (1<<6) | (1<<7);
+"39
+[; ;keypad.c: 39:     TRISB |= (1<<4) | (1<<5) | (1<<6) | (1<<7);
 [e =| _TRISB -> | | | << -> 1 `i -> 4 `i << -> 1 `i -> 5 `i << -> 1 `i -> 6 `i << -> 1 `i -> 7 `i `Vuc ]
-"43
-[; ;keypad.c: 43:     OPTION_REGbits.nRBPU = 0;
+"40
+[; ;keypad.c: 40:     OPTION_REGbits.nRBPU = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"44
-[; ;keypad.c: 44: }
+"41
+[; ;keypad.c: 41:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"42
+[; ;keypad.c: 42: }
 [e :UE 138 ]
 }
-"58
-[; ;keypad.c: 58: char keypad_getkey(void){
+"53
+[; ;keypad.c: 53: char keypad_getkey(void){
 [v _keypad_getkey `(uc ~T0 @X0 1 ef ]
 {
 [e :U _keypad_getkey ]
@@ -316,8 +322,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F1268
 :U ..
 :U ..
-"60
-[; ;keypad.c: 60: char letras[4][4]={ {'1','2','3','A'},
+"55
+[; ;keypad.c: 55: char letters[4][4]={ {'1','2','3','A'},
 -> -> 49 `ui `uc
 -> -> 50 `ui `uc
 -> -> 51 `ui `uc
@@ -344,252 +350,252 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v F1271 `uc ~T0 @X0 -> 4 `i t ]
-[v _letras `F1271 ~T0 @X0 -> 4 `i a ]
-[e = _letras F1268 ]
-"64
-[; ;keypad.c: 64: int i=0;
+[v _letters `F1271 ~T0 @X0 -> 4 `i a ]
+[e = _letters F1268 ]
+"59
+[; ;keypad.c: 59: int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"65
-[; ;keypad.c: 65: char valor=0;
-[v _valor `uc ~T0 @X0 1 a ]
-[e = _valor -> -> 0 `i `uc ]
-"67
-[; ;keypad.c: 67: for(i=0;i<4;i++){
+"60
+[; ;keypad.c: 60: char value=0;
+[v _value `uc ~T0 @X0 1 a ]
+[e = _value -> -> 0 `i `uc ]
+"62
+[; ;keypad.c: 62: for(i=0;i<4;i++){
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 4 `i 140  ]
 [e $U 141  ]
 [e :U 140 ]
 {
-"69
-[; ;keypad.c: 69:    if(i==0){
+"64
+[; ;keypad.c: 64:    if(i==0){
 [e $ ! == _i -> 0 `i 143  ]
 {
-"71
-[; ;keypad.c: 71:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(1<<2)|(1<<1)|(0<<0);
+"66
+[; ;keypad.c: 66:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(1<<2)|(1<<1)|(0<<0);
 [e = _PORTB -> | | | | | | | << -> 1 `i -> 7 `i << -> 1 `i -> 6 `i << -> 1 `i -> 5 `i << -> 1 `i -> 4 `i << -> 1 `i -> 3 `i << -> 1 `i -> 2 `i << -> 1 `i -> 1 `i << -> 0 `i -> 0 `i `uc ]
-"72
-[; ;keypad.c: 72:       _delay((unsigned long)((100)*(8000000/4000000.0)));
+"67
+[; ;keypad.c: 67:       _delay((unsigned long)((100)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"73
-[; ;keypad.c: 73:       while (!(PORTB & (1<<4))){valor=letras[0][0];}
+"68
+[; ;keypad.c: 68:       while (!(PORTB & (1<<4))){value=letters[0][0];}
 [e $U 144  ]
 [e :U 145 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 144 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 4 `i -> 0 `i 145  ]
 [e :U 146 ]
-"74
-[; ;keypad.c: 74:       while (!(PORTB & (1<<5))){valor=letras[0][1];}
+"69
+[; ;keypad.c: 69:       while (!(PORTB & (1<<5))){value=letters[0][1];}
 [e $U 147  ]
 [e :U 148 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 147 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 5 `i -> 0 `i 148  ]
 [e :U 149 ]
-"75
-[; ;keypad.c: 75:       while (!(PORTB & (1<<6))){valor=letras[0][2];}
+"70
+[; ;keypad.c: 70:       while (!(PORTB & (1<<6))){value=letters[0][2];}
 [e $U 150  ]
 [e :U 151 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 150 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 6 `i -> 0 `i 151  ]
 [e :U 152 ]
-"76
-[; ;keypad.c: 76:       while (!(PORTB & (1<<7))){valor=letras[0][3];}
+"71
+[; ;keypad.c: 71:       while (!(PORTB & (1<<7))){value=letters[0][3];}
 [e $U 153  ]
 [e :U 154 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 153 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 7 `i -> 0 `i 154  ]
 [e :U 155 ]
-"77
-[; ;keypad.c: 77:    }
+"72
+[; ;keypad.c: 72:    }
 }
 [e :U 143 ]
-"79
-[; ;keypad.c: 79:    if(i==1){
+"74
+[; ;keypad.c: 74:    if(i==1){
 [e $ ! == _i -> 1 `i 156  ]
 {
-"80
-[; ;keypad.c: 80:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(1<<2)|(0<<1)|(1<<0);
+"75
+[; ;keypad.c: 75:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(1<<2)|(0<<1)|(1<<0);
 [e = _PORTB -> | | | | | | | << -> 1 `i -> 7 `i << -> 1 `i -> 6 `i << -> 1 `i -> 5 `i << -> 1 `i -> 4 `i << -> 1 `i -> 3 `i << -> 1 `i -> 2 `i << -> 0 `i -> 1 `i << -> 1 `i -> 0 `i `uc ]
-"81
-[; ;keypad.c: 81:       _delay((unsigned long)((100)*(8000000/4000000.0)));
+"76
+[; ;keypad.c: 76:       _delay((unsigned long)((100)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"82
-[; ;keypad.c: 82:       while (!(PORTB & (1<<4))){valor=letras[1][0];}
+"77
+[; ;keypad.c: 77:       while (!(PORTB & (1<<4))){value=letters[1][0];}
 [e $U 157  ]
 [e :U 158 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 157 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 4 `i -> 0 `i 158  ]
 [e :U 159 ]
-"83
-[; ;keypad.c: 83:       while (!(PORTB & (1<<5))){valor=letras[1][1];}
+"78
+[; ;keypad.c: 78:       while (!(PORTB & (1<<5))){value=letters[1][1];}
 [e $U 160  ]
 [e :U 161 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 160 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 5 `i -> 0 `i 161  ]
 [e :U 162 ]
-"84
-[; ;keypad.c: 84:       while (!(PORTB & (1<<6))){valor=letras[1][2];}
+"79
+[; ;keypad.c: 79:       while (!(PORTB & (1<<6))){value=letters[1][2];}
 [e $U 163  ]
 [e :U 164 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 163 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 6 `i -> 0 `i 164  ]
 [e :U 165 ]
-"85
-[; ;keypad.c: 85:       while (!(PORTB & (1<<7))){valor=letras[1][3];}
+"80
+[; ;keypad.c: 80:       while (!(PORTB & (1<<7))){value=letters[1][3];}
 [e $U 166  ]
 [e :U 167 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 166 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 7 `i -> 0 `i 167  ]
 [e :U 168 ]
-"86
-[; ;keypad.c: 86:    }
+"81
+[; ;keypad.c: 81:    }
 }
 [e :U 156 ]
-"88
-[; ;keypad.c: 88:    if(i==2){
+"83
+[; ;keypad.c: 83:    if(i==2){
 [e $ ! == _i -> 2 `i 169  ]
 {
-"89
-[; ;keypad.c: 89:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(0<<2)|(1<<1)|(1<<0);
+"84
+[; ;keypad.c: 84:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(1<<3)|(0<<2)|(1<<1)|(1<<0);
 [e = _PORTB -> | | | | | | | << -> 1 `i -> 7 `i << -> 1 `i -> 6 `i << -> 1 `i -> 5 `i << -> 1 `i -> 4 `i << -> 1 `i -> 3 `i << -> 0 `i -> 2 `i << -> 1 `i -> 1 `i << -> 1 `i -> 0 `i `uc ]
-"90
-[; ;keypad.c: 90:       _delay((unsigned long)((100)*(8000000/4000000.0)));
+"85
+[; ;keypad.c: 85:       _delay((unsigned long)((100)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"91
-[; ;keypad.c: 91:       while (!(PORTB & (1<<4))){valor=letras[2][0];}
+"86
+[; ;keypad.c: 86:       while (!(PORTB & (1<<4))){value=letters[2][0];}
 [e $U 170  ]
 [e :U 171 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 170 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 4 `i -> 0 `i 171  ]
 [e :U 172 ]
-"92
-[; ;keypad.c: 92:       while (!(PORTB & (1<<5))){valor=letras[2][1];}
+"87
+[; ;keypad.c: 87:       while (!(PORTB & (1<<5))){value=letters[2][1];}
 [e $U 173  ]
 [e :U 174 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 173 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 5 `i -> 0 `i 174  ]
 [e :U 175 ]
-"93
-[; ;keypad.c: 93:       while (!(PORTB & (1<<6))){valor=letras[2][2];}
+"88
+[; ;keypad.c: 88:       while (!(PORTB & (1<<6))){value=letters[2][2];}
 [e $U 176  ]
 [e :U 177 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 176 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 6 `i -> 0 `i 177  ]
 [e :U 178 ]
-"94
-[; ;keypad.c: 94:       while (!(PORTB & (1<<7))){valor=letras[2][3];}
+"89
+[; ;keypad.c: 89:       while (!(PORTB & (1<<7))){value=letters[2][3];}
 [e $U 179  ]
 [e :U 180 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 179 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 7 `i -> 0 `i 180  ]
 [e :U 181 ]
-"95
-[; ;keypad.c: 95:    }
+"90
+[; ;keypad.c: 90:    }
 }
 [e :U 169 ]
-"97
-[; ;keypad.c: 97:    if(i==3){
+"92
+[; ;keypad.c: 92:    if(i==3){
 [e $ ! == _i -> 3 `i 182  ]
 {
-"98
-[; ;keypad.c: 98:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(0<<3)|(1<<2)|(1<<1)|(1<<0);
+"93
+[; ;keypad.c: 93:       PORTB = (1<<7)|(1<<6)|(1<<5)|(1<<4)|(0<<3)|(1<<2)|(1<<1)|(1<<0);
 [e = _PORTB -> | | | | | | | << -> 1 `i -> 7 `i << -> 1 `i -> 6 `i << -> 1 `i -> 5 `i << -> 1 `i -> 4 `i << -> 0 `i -> 3 `i << -> 1 `i -> 2 `i << -> 1 `i -> 1 `i << -> 1 `i -> 0 `i `uc ]
-"99
-[; ;keypad.c: 99:       _delay((unsigned long)((100)*(8000000/4000000.0)));
+"94
+[; ;keypad.c: 94:       _delay((unsigned long)((100)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"100
-[; ;keypad.c: 100:       while (!(PORTB & (1<<4))){valor=letras[3][0];}
+"95
+[; ;keypad.c: 95:       while (!(PORTB & (1<<4))){value=letters[3][0];}
 [e $U 183  ]
 [e :U 184 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 183 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 4 `i -> 0 `i 184  ]
 [e :U 185 ]
-"101
-[; ;keypad.c: 101:       while (!(PORTB & (1<<5))){valor=letras[3][1];}
+"96
+[; ;keypad.c: 96:       while (!(PORTB & (1<<5))){value=letters[3][1];}
 [e $U 186  ]
 [e :U 187 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 186 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 5 `i -> 0 `i 187  ]
 [e :U 188 ]
-"102
-[; ;keypad.c: 102:       while (!(PORTB & (1<<6))){valor=letras[3][2];}
+"97
+[; ;keypad.c: 97:       while (!(PORTB & (1<<6))){value=letters[3][2];}
 [e $U 189  ]
 [e :U 190 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 189 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 6 `i -> 0 `i 190  ]
 [e :U 191 ]
-"103
-[; ;keypad.c: 103:       while (!(PORTB & (1<<7))){valor=letras[3][3];}
+"98
+[; ;keypad.c: 98:       while (!(PORTB & (1<<7))){value=letters[3][3];}
 [e $U 192  ]
 [e :U 193 ]
 {
-[e = _valor *U + &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letras * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letras `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e = _value *U + &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _letters * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _letters `ui -> -> 4 `i `ui `ux `ui `ux ]
 }
 [e :U 192 ]
 [e $ ! != & -> _PORTB `i << -> 1 `i -> 7 `i -> 0 `i 193  ]
 [e :U 194 ]
-"104
-[; ;keypad.c: 104:       }
+"99
+[; ;keypad.c: 99:       }
 }
 [e :U 182 ]
-"105
-[; ;keypad.c: 105:    }
+"100
+[; ;keypad.c: 100:    }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 140  ]
 [e :U 141 ]
 }
-"107
-[; ;keypad.c: 107:    return valor;
-[e ) _valor ]
+"102
+[; ;keypad.c: 102:    return value;
+[e ) _value ]
 [e $UE 139  ]
-"108
-[; ;keypad.c: 108: }
+"103
+[; ;keypad.c: 103: }
 [e :UE 139 ]
 }

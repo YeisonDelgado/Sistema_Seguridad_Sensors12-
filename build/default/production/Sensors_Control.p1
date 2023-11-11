@@ -289,168 +289,168 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"34 ./fuses.h
-[p x FOSC  =  INTRC_CLKOUT ]
-"35
-[p x WDTE  =  OFF        ]
+"35 ./fuses.h
+[p x FOSC  =  INTRC_CLKOUT  ]
 "36
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF          ]
 "37
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF         ]
 "38
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF         ]
 "39
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF            ]
 "40
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF           ]
 "41
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF         ]
 "42
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF          ]
 "43
-[p x LVP  =  OFF         ]
-"46
-[p x BOR4V  =  BOR40V    ]
+[p x FCMEN  =  OFF         ]
+"44
+[p x LVP  =  OFF           ]
 "47
-[p x WRT  =  OFF         ]
-"50
-[p x BOR4V  =  BOR40V    ]
+[p x BOR4V  =  BOR40V      ]
+"48
+[p x WRT  =  OFF           ]
 "51
-[p x WRT  =  OFF         ]
-"42 Sensors_Control.c
-[; ;Sensors_Control.c: 42: void ADC_Init(void){
+[p x BOR4V  =  BOR40V      ]
+"52
+[p x WRT  =  OFF           ]
+"38 Sensors_Control.c
+[; ;Sensors_Control.c: 38: void ADC_Init(void) {
 [v _ADC_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_Init ]
 [f ]
-"43
-[; ;Sensors_Control.c: 43:     ADCON1bits.ADFM = 1;
+"39
+[; ;Sensors_Control.c: 39:     ADCON1bits.ADFM = 1;
 [e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
-"44
-[; ;Sensors_Control.c: 44:     ADCON1bits.VCFG0 = 0;
+"40
+[; ;Sensors_Control.c: 40:     ADCON1bits.VCFG0 = 0;
 [e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-"45
-[; ;Sensors_Control.c: 45:     ADCON1bits.VCFG1 = 0;
+"41
+[; ;Sensors_Control.c: 41:     ADCON1bits.VCFG1 = 0;
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"46
-[; ;Sensors_Control.c: 46:     ADCON0bits.ADCS = 0b01;
+"42
+[; ;Sensors_Control.c: 42:     ADCON0bits.ADCS = 0b01;
 [e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
-"47
-[; ;Sensors_Control.c: 47: }
+"43
+[; ;Sensors_Control.c: 43: }
 [e :UE 138 ]
 }
-"61
-[; ;Sensors_Control.c: 61: int Use_Chanel(int select){
-[v _Use_Chanel `(i ~T0 @X0 1 ef1`i ]
+"54
+[; ;Sensors_Control.c: 54: int Use_Channel(int select){
+[v _Use_Channel `(i ~T0 @X0 1 ef1`i ]
 {
-[e :U _Use_Chanel ]
+[e :U _Use_Channel ]
 [v _select `i ~T0 @X0 1 r1 ]
 [f ]
-"62
-[; ;Sensors_Control.c: 62:     ADCON0bits.CHS = (0x0f & select);
+"55
+[; ;Sensors_Control.c: 55:     ADCON0bits.CHS = (0x0F & select);
 [e = . . _ADCON0bits 0 2 -> & -> 15 `i _select `uc ]
-"63
-[; ;Sensors_Control.c: 63:     ADCON0bits.ADON = 1;
+"56
+[; ;Sensors_Control.c: 56:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"64
-[; ;Sensors_Control.c: 64:     _delay((unsigned long)((30)*(8000000/4000000.0)));
+"57
+[; ;Sensors_Control.c: 57:     _delay((unsigned long)((30)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"65
-[; ;Sensors_Control.c: 65:     ADCON0bits.GO = 1;
+"58
+[; ;Sensors_Control.c: 58:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"66
-[; ;Sensors_Control.c: 66:     while (ADCON0bits.GO);
+"59
+[; ;Sensors_Control.c: 59:     while (ADCON0bits.GO);
 [e $U 140  ]
 [e :U 141 ]
 [e :U 140 ]
 [e $ != -> . . _ADCON0bits 1 1 `i -> 0 `i 141  ]
 [e :U 142 ]
-"67
-[; ;Sensors_Control.c: 67:     ADCON0bits.ADON = 0;
+"60
+[; ;Sensors_Control.c: 60:     ADCON0bits.ADON = 0;
 [e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
-"69
-[; ;Sensors_Control.c: 69:     return ((ADRESH << 8) | ADRESL);
+"63
+[; ;Sensors_Control.c: 63:     return ((ADRESH << 8) | ADRESL);
 [e ) | << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 [e $UE 139  ]
-"70
-[; ;Sensors_Control.c: 70: }
+"64
+[; ;Sensors_Control.c: 64: }
 [e :UE 139 ]
 }
-"84
-[; ;Sensors_Control.c: 84: int Calculus_Temperature(int temperature){
+"75
+[; ;Sensors_Control.c: 75: int Calculus_Temperature(int temperature) {
 [v _Calculus_Temperature `(i ~T0 @X0 1 ef1`i ]
 {
 [e :U _Calculus_Temperature ]
 [v _temperature `i ~T0 @X0 1 r1 ]
 [f ]
-"85
-[; ;Sensors_Control.c: 85:     long a = 1023 - temperature;
+"76
+[; ;Sensors_Control.c: 76:     long a = 1023 - temperature;
 [v _a `l ~T0 @X0 1 a ]
 [e = _a -> - -> 1023 `i _temperature `l ]
-"87
-[; ;Sensors_Control.c: 87:     float tempC = (float)(4090/(log((1025.0 * 10 / a - 10) / 10) + 4090/298.0) - 273.0);
+"78
+[; ;Sensors_Control.c: 78:     float tempC = (float)(4090 / (log((1025.0 * 10 / a - 10) / 10) + 4090 / 298.0) - 273.0);
 [v _tempC `f ~T0 @X0 1 a ]
 [e = _tempC -> - / -> -> 4090 `i `d + ( _log (1 / - / * .1025.0 -> -> 10 `i `d -> _a `d -> -> 10 `i `d -> -> 10 `i `d / -> -> 4090 `i `d .298.0 .273.0 `f ]
-"88
-[; ;Sensors_Control.c: 88:     float tempF = (float)(tempC + 273.15);
+"79
+[; ;Sensors_Control.c: 79:     float tempF = (float)(tempC + 273.15);
 [v _tempF `f ~T0 @X0 1 a ]
 [e = _tempF -> + -> _tempC `d .273.15 `f ]
-"89
-[; ;Sensors_Control.c: 89:     return (int)tempC;
+"80
+[; ;Sensors_Control.c: 80:     return (int)tempC;
 [e ) -> _tempC `i ]
 [e $UE 143  ]
-"90
-[; ;Sensors_Control.c: 90: }
+"81
+[; ;Sensors_Control.c: 81: }
 [e :UE 143 ]
 }
-"104
-[; ;Sensors_Control.c: 104: unsigned char Sensors_IHM(void){
+"92
+[; ;Sensors_Control.c: 92: unsigned char Sensors_IHM(void) {
 [v _Sensors_IHM `(uc ~T0 @X0 1 ef ]
 {
 [e :U _Sensors_IHM ]
 [f ]
-"105
-[; ;Sensors_Control.c: 105:     unsigned char alarm_activate = 0;
+"93
+[; ;Sensors_Control.c: 93:     unsigned char alarm_activate = 0;
 [v _alarm_activate `uc ~T0 @X0 1 a ]
 [e = _alarm_activate -> -> 0 `i `uc ]
-"106
-[; ;Sensors_Control.c: 106:     if(RC1 == 0){
+"95
+[; ;Sensors_Control.c: 95:     if (RC1 == 0) {
 [e $ ! == -> _RC1 `i -> 0 `i 145  ]
 {
-"107
-[; ;Sensors_Control.c: 107:         alarm_activate = 1;
+"96
+[; ;Sensors_Control.c: 96:         alarm_activate = 1;
 [e = _alarm_activate -> -> 1 `i `uc ]
-"108
-[; ;Sensors_Control.c: 108:     }
+"97
+[; ;Sensors_Control.c: 97:     }
 }
 [e :U 145 ]
-"109
-[; ;Sensors_Control.c: 109:     if(RC0 == 1){
+"99
+[; ;Sensors_Control.c: 99:     if (RC0 == 1) {
 [e $ ! == -> _RC0 `i -> 1 `i 146  ]
 {
-"110
-[; ;Sensors_Control.c: 110:         alarm_activate = 1;
+"100
+[; ;Sensors_Control.c: 100:         alarm_activate = 1;
 [e = _alarm_activate -> -> 1 `i `uc ]
-"111
-[; ;Sensors_Control.c: 111:     }
+"101
+[; ;Sensors_Control.c: 101:     }
 }
 [e :U 146 ]
-"112
-[; ;Sensors_Control.c: 112:     if(RC2 == 1){
+"103
+[; ;Sensors_Control.c: 103:     if (RC2 == 1) {
 [e $ ! == -> _RC2 `i -> 1 `i 147  ]
 {
-"113
-[; ;Sensors_Control.c: 113:         alarm_activate = 1;
+"104
+[; ;Sensors_Control.c: 104:         alarm_activate = 1;
 [e = _alarm_activate -> -> 1 `i `uc ]
-"114
-[; ;Sensors_Control.c: 114:     }
+"105
+[; ;Sensors_Control.c: 105:     }
 }
 [e :U 147 ]
-"115
-[; ;Sensors_Control.c: 115:     return alarm_activate;
+"107
+[; ;Sensors_Control.c: 107:     return alarm_activate;
 [e ) _alarm_activate ]
 [e $UE 144  ]
-"116
-[; ;Sensors_Control.c: 116:  }
+"108
+[; ;Sensors_Control.c: 108: }
 [e :UE 144 ]
 }
